@@ -1,0 +1,43 @@
+https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-15/post_service/123325_trader_SuperBeta_BOOMERS/
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+● trader_SuperBeta_BOOMERS.service - dstock SuperBeta palloc BOOMERS trader service
+   Loaded: loaded (/etc/systemd/system/trader_SuperBeta_BOOMERS.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post) (Result: exit-code)
+  Process: 30711 ExecStart=/home/derrick_karimi/dstock/palloc_trader --allocation-source palloc_sqlite --portfolio BOOMERS --which-api alpaca --api-key PK6ZLH6LTSYOTDB6HKVD --secret-key TbF08c3hhiP2JcZtmxsrakOQym4yfkmlBk8JMVq2 --sqlite-file /home/derrick_karimi/palloc.sqlite (code=exited, status=1/FAILURE)
+ Main PID: 30711 (code=exited, status=1/FAILURE); Control PID: 30723 (generate_post_s)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/trader_SuperBeta_BOOMERS.service
+           ├─30723 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio BOOMERS --service-name trader_SuperBeta_BOOMERS
+           └─30739 systemctl status trader_SuperBeta_BOOMERS -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 12:33:25 EDT. --
+May 15 12:33:23 the-bug-tank systemd[1]: Starting dstock SuperBeta palloc BOOMERS trader service...
+May 15 12:33:23 the-bug-tank trader_SuperBeta_BOOMERS[30711]: Not already in a venv
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]: INFO:root:Logging into Alpaca
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]: INFO:root:Canceling existing orders
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]: Traceback (most recent call last):
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/rest.py", line 161, in _one_request
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     resp.raise_for_status()
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/requests/models.py", line 943, in raise_for_status
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     raise HTTPError(http_error_msg, response=self)
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.alpaca.markets/v2/orders
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]: During handling of the above exception, another exception occurred:
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]: Traceback (most recent call last):
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "./palloc_trader.py", line 719, in <module>
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     main(**vars(args))
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "./palloc_trader.py", line 514, in main
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     alpaca.cancel_all_orders()
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/rest.py", line 405, in cancel_all_orders
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     self.delete('/orders')
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/rest.py", line 189, in delete
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     return self._request('DELETE', path, data)
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/rest.py", line 140, in _request
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     return self._one_request(method, url, opts, retry)
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/rest.py", line 169, in _one_request
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]:     raise APIError(error, http_error)
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30711]: alpaca_trade_api.rest.APIError: account not found for ef5d008f-6efa-49c6-bed5-1cdf3c00dd92
+May 15 12:33:25 the-bug-tank systemd[1]: trader_SuperBeta_BOOMERS.service: Main process exited, code=exited, status=1/FAILURE
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30723]: Not already in a venv
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30723]: generating post service report for : trader_SuperBeta_BOOMERS
+May 15 12:33:25 the-bug-tank trader_SuperBeta_BOOMERS[30723]: Generating email content ...
