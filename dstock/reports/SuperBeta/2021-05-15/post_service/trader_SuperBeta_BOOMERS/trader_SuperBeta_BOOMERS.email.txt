@@ -1,0 +1,16 @@
+https://alwaystraining.github.io//
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 2
+● trader_SuperBeta_BOOMERS.service - dstock SuperBeta palloc BOOMERS trader service
+   Loaded: loaded (/etc/systemd/system/trader_SuperBeta_BOOMERS.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post) (Result: exit-code)
+  Process: 23365 ExecStart=/home/derrick_karimi/dstock/palloc_trader --allocation-source palloc_sqlite --portfolio BOOMERS --which-api alpaca --api-key PK31E0NSVML8SEGI13Y9 --secret-key k2ND5BsojEHuSPS1uxTAf3U7DitVcBrQmMAq4zKD (code=exited, status=2)
+ Main PID: 23365 (code=exited, status=2); Control PID: 23377 (generate_post_s)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/trader_SuperBeta_BOOMERS.service
+           ├─23377 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio BOOMERS --service-name trader_SuperBeta_BOOMERS
+           └─23391 systemctl status trader_SuperBeta_BOOMERS -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 11:50:28 EDT. --
+May 15 11:50:26 the-bug-tank systemd[1]: Starting dstock SuperBeta palloc BOOMERS trader service...
+May 15 11:50:26 the-bug-tank trader_SuperBeta_BOOMERS[23365]: Not already in a venv
