@@ -1,0 +1,28 @@
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 10:58:31 EDT. --
+May 14 08:44:44 the-bug-tank systemd[1]: Starting dstock palloc trader service...
+May 14 08:44:44 the-bug-tank trader_BOOMERS[16217]: Not already in a venv
+May 14 08:44:44 the-bug-tank trader_BOOMERS[16217]: per_host_config: line 15: /home/derrick_karimi/work/vault/envfiles/gmail: No such file or directory
+May 14 08:44:44 the-bug-tank trader_BOOMERS[16217]: per_host_config: line 21: /home/derrick_karimi/work/vault/envfiles/tiingo: No such file or directory
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]: Traceback (most recent call last):
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "./palloc_trader.py", line 719, in <module>
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     main(**vars(args))
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "./palloc_trader.py", line 406, in main
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     allocation_source
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "./palloc_trader.py", line 164, in __init__
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     self.portfolio_response = self.get_portfolio_response()
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "./palloc_trader.py", line 175, in get_portfolio_response
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     pr = requests.get(url).json()
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/requests/api.py", line 76, in get
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     return request('get', url, params=params, **kwargs)
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/requests/api.py", line 61, in request
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     return session.request(method=method, url=url, **kwargs)
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/requests/sessions.py", line 528, in request
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     prep = self.prepare_request(req)
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/requests/sessions.py", line 466, in prepare_request
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     hooks=merge_hooks(request.hooks, self.hooks),
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/requests/models.py", line 316, in prepare
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     self.prepare_url(url, params)
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/requests/models.py", line 390, in prepare_url
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]:     raise MissingSchema(error)
+May 14 08:44:46 the-bug-tank trader_BOOMERS[16217]: requests.exceptions.MissingSchema: Invalid URL 'None/portfolios/BOOMERS': No schema supplied. Perhaps you meant http://None/portfolios/BOOMERS?
+May 14 08:44:46 the-bug-tank systemd[1]: Started dstock palloc trader service.
