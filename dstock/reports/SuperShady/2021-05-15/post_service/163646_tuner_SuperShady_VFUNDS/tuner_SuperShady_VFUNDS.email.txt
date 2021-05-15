@@ -1,0 +1,21 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-15/post_service/163646_tuner_SuperShady_VFUNDS/
+SERVICE_NAME    = tuner_SuperShady_VFUNDS
+SERVICE_RESULT  = success
+EXIT_CODE       = killed
+EXIT_STATUS     = TERM
+● tuner_SuperShady_VFUNDS.service - dstock SuperShady palloc VFUNDS tuner service
+     Loaded: loaded (/etc/systemd/system/tuner_SuperShady_VFUNDS.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) since Sat 2021-05-15 16:36:45 EDT; 120ms ago
+    Process: 2312078 ExecStart=/home/dkarimi/work/dstock/palloc_tuner --fund-set VFUNDS --self-seeded-file /home/dkarimi/work/dstock/runs/SuperShady_VFUNDS_tuner_seed.cfg --sqlite-file /home/dkarimi/work/databases/palloc.sqlite (code=killed, signal=TERM)
+   Main PID: 2312078 (code=killed, signal=TERM); Control PID: 2315650 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 10.8M
+     CGroup: /system.slice/tuner_SuperShady_VFUNDS.service
+             ├─2315650 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio VFUNDS --service-name tuner_SuperShady_VFUNDS
+             └─2315735 systemctl status tuner_SuperShady_VFUNDS -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sat 2021-05-15 16:36:46 EDT. --
+May 15 16:36:08 the-rain-maker tuner_SuperShady_VFUNDS[2312219]: [   527s]    INFO root: {tuning: 83.6%, fund_set: VFUNDS, n: 31, score: 1.052 %, stdev: 3.757%, alpha: 4.809%}
+May 15 16:36:09 the-rain-maker tuner_SuperShady_VFUNDS[2312219]: [   527s]    INFO root: {0: 12, 1: 18, since_last_best: 18, bests: 6, since_last_record: 12, bad cfg: 16}
+May 15 16:36:45 the-rain-maker systemd[1]: Stopping dstock SuperShady palloc VFUNDS tuner service...
+May 15 16:36:46 the-rain-maker tuner_SuperShady_VFUNDS[2315650]: generating post service report for : tuner_SuperShady_VFUNDS
+May 15 16:36:46 the-rain-maker tuner_SuperShady_VFUNDS[2315650]: Generating email content ...
