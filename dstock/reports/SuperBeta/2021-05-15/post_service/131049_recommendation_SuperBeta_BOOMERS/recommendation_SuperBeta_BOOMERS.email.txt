@@ -1,0 +1,65 @@
+https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-15/post_service/131049_recommendation_SuperBeta_BOOMERS/
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+● recommendation_SuperBeta_BOOMERS.service - dstock SuperBeta palloc recommendation service
+   Loaded: loaded (/etc/systemd/system/recommendation_SuperBeta_BOOMERS.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post) (Result: exit-code)
+  Process: 5278 ExecStart=/home/derrick_karimi/dstock/palloc_recommendation --fund-set BOOMERS --results-file /home/derrick_karimi/dstock/runs/BOOMERS_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/derrick_karimi/palloc.sqlite (code=exited, status=1/FAILURE)
+ Main PID: 5278 (code=exited, status=1/FAILURE); Control PID: 5355 (generate_post_s)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/recommendation_SuperBeta_BOOMERS.service
+           ├─5355 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio BOOMERS --service-name recommendation_SuperBeta_BOOMERS
+           └─5371 systemctl status recommendation_SuperBeta_BOOMERS -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 13:10:49 EDT. --
+May 15 13:10:47 the-bug-tank systemd[1]: Starting dstock SuperBeta palloc recommendation service...
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None})
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:Looking up start allocation for 2021-05-15 00:00:00
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fBOOMERS.yaml
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key long_term_moving_average = 231
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key long_term_palloc_weight = -2.712995709909957
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key long_term_rolling_stdev = 250
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key short_term_moving_average = 157
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key short_term_palloc_weight = 2.985985136786722
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key short_term_rolling_stdev = 137
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:Utilizing last recommendation detrmined new start: 2021-05-15
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key long_term_moving_average = 231
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key long_term_palloc_weight = -2.712995709909957
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key long_term_rolling_stdev = 250
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key short_term_moving_average = 157
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key short_term_palloc_weight = 2.985985136786722
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:inserting config key short_term_rolling_stdev = 137
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:dstock_cfg loaded from DB (config row id = 33522)
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:Found existing config row: 33522
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:Starting allocations from 2021-05-14: [GE 36.0%, F 57.1%, IBM 0.6%, T 6.2%]
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:User specified start 2021-05-15 00:00:00 was buffered to 2020-05-01 00:00:00
+May 15 13:10:48 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: INFO:root:computing palloc strategy iteration 1 of 1 starting 2021-05-15 00:00:00 over
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: WARNING:root:firstprices (for 2021-05-15 00:00:00) is None and last_prices (for 2021-05-14 00:00:00) is None
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: WARNING:root:timepoints:
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: {'dataset_start': Timestamp('2020-05-01 00:00:00'),
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:  'nice_prices': Timestamp('2021-04-28 00:00:00'),
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:  'nice_stats': Timestamp('2021-04-28 00:00:00'),
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:  'non_null': Timestamp('2021-04-28 00:00:00'),
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:  'window_actual_start': Timestamp('2020-05-01 00:00:00')}
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: WARNING:root:{'iterations': [], 'statistics': {}}
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: Traceback (most recent call last):
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:   File "./dstock.py", line 2490, in <module>
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:     sys.exit(main())
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:   File "./dstock.py", line 2487, in main
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:     function(**vars(args))
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:   File "./dstock.py", line 2253, in palloc_main
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:     " out of " + str(num_iterations)
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: Exception: Not enough successfull iterations, got 0 out of 1
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: executing per host config action:
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: scp derrick_karimi@35.237.70.62:
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]: usage: scp [-346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:            [-l limit] [-o ssh_option] [-P port] [-S program]
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5278]:            [[user@]host1:]file1 ... [[user@]host2:]file2
+May 15 13:10:49 the-bug-tank systemd[1]: recommendation_SuperBeta_BOOMERS.service: Main process exited, code=exited, status=1/FAILURE
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5355]: generating post service report for : recommendation_SuperBeta_BOOMERS
+May 15 13:10:49 the-bug-tank recommendation_SuperBeta_BOOMERS[5355]: Generating email content ...
