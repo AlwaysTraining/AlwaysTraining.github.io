@@ -1,0 +1,67 @@
+https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-15/post_service/130051_trader_SuperBeta_BOOMERS/
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+● trader_SuperBeta_BOOMERS.service - dstock SuperBeta palloc BOOMERS trader service
+   Loaded: loaded (/etc/systemd/system/trader_SuperBeta_BOOMERS.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post)
+  Process: 3552 ExecStart=/home/derrick_karimi/dstock/palloc_trader --allocation-source palloc_sqlite --portfolio BOOMERS --which-api alpaca --api-key PK6ZLH6LTSYOTDB6HKVD --secret-key TbF08c3hhiP2JcZtmxsrakOQym4yfkmlBk8JMVq2 --sqlite-file /home/derrick_karimi/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+ Main PID: 3552 (code=exited, status=0/SUCCESS); Control PID: 3664 (generate_post_s)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/trader_SuperBeta_BOOMERS.service
+           ├─3664 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio BOOMERS --service-name trader_SuperBeta_BOOMERS
+           └─3680 systemctl status trader_SuperBeta_BOOMERS -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 13:00:51 EDT. --
+May 15 13:00:47 the-bug-tank systemd[1]: Starting dstock SuperBeta palloc BOOMERS trader service...
+May 15 13:00:49 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:Logging into Alpaca
+May 15 13:00:49 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:Canceling existing orders
+May 15 13:00:49 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:Requesting current orders
+May 15 13:00:49 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:There are orders, waited 1 times for them to go...
+May 15 13:00:50 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:Requesting current orders
+May 15 13:00:50 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:   + buy 2717.43 shares of GE @ $ 13.26  = $ 36019.5
+May 15 13:00:50 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:   + buy 4826.42 shares of F @ $ 11.83  = $ 57096.49
+May 15 13:00:50 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:   + buy 4.49 shares of IBM @ $ 144.7  = $ 649.03
+May 15 13:00:50 the-bug-tank trader_SuperBeta_BOOMERS[3552]: INFO:root:   + buy 193.51 shares of T @ $ 32.22  = $ 6234.98
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]: {
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "account_value": 100000.0,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "goal_allocation": {
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "GE": 0.3601950379403396,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "F": 0.570964851121561,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "IBM": 0.006490297745205944,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "T": 0.06234981319289346
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     },
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "requested_recommendation_time": null,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "actual_recommendation_time": "2021-05-15 10:46:36",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "cur_time": "2021-05-15",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "recommendation_run_end_date": "2021-05-14 00:00:00",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "orders": [
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         [
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "buy",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "GE",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             2717.427385892116
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         ],
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         [
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "buy",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "F",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             4826.415046491969
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         ],
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         [
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "buy",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "IBM",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             4.485348997926745
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         ],
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         [
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "buy",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             "T",
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:             193.5127250155183
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         ]
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     ],
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     "prices": {
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "GE": 13.255,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "F": 11.83,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "IBM": 144.7,
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:         "T": 32.22
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]:     }
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3552]: }
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3664]: generating post service report for : trader_SuperBeta_BOOMERS
+May 15 13:00:51 the-bug-tank trader_SuperBeta_BOOMERS[3664]: Generating email content ...
