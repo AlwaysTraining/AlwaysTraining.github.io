@@ -1,0 +1,121 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-15/post_service/155350_trader_SuperShady_UNCORRELATED/
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+● trader_SuperShady_UNCORRELATED.service - dstock SuperShady palloc UNCORRELATED trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperShady_UNCORRELATED.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperShady_UNCORRELATED.timer
+    Process: 2301753 ExecStart=/home/dkarimi/work/dstock/palloc_trader --allocation-source palloc_sqlite --portfolio UNCORRELATED --which-api alpaca --api-key PKNWCJTIA5B78VWP1M18 --secret-key jtrZpUMhVXNel1Z1d8u3p3YudyMpN1bW4ZHVOZZr --sqlite-file /home/dkarimi/work/databases/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 2301753 (code=exited, status=0/SUCCESS); Control PID: 2302250 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 3.2M
+     CGroup: /system.slice/trader_SuperShady_UNCORRELATED.service
+             ├─2302250 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio UNCORRELATED --service-name trader_SuperShady_UNCORRELATED
+             └─2302296 systemctl status trader_SuperShady_UNCORRELATED -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sat 2021-05-15 15:53:50 EDT. --
+May 15 15:53:42 the-rain-maker systemd[1]: Starting dstock SuperShady palloc UNCORRELATED trader service...
+May 15 15:53:44 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:Logging into Alpaca
+May 15 15:53:44 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:Canceling existing orders
+May 15 15:53:45 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:Requesting current orders
+May 15 15:53:45 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:There are orders, waited 1 times for them to go...
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:Requesting current orders
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   - sell 51.26 shares of XLE @ $ 53.51  = $ 2742.7
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   - sell 183.4 shares of XLF @ $ 37.9  = $ 6949.94
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   - sell 12.23 shares of XLK @ $ 136.0  = $ 1663.2
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   - sell 10.43 shares of XLP @ $ 70.91  = $ 739.9
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   - sell 0.15 shares of XLB @ $ 87.96  = $ 12.93
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   + buy 32.08 shares of XLU @ $ 65.92  = $ 2114.87
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   + buy 47.58 shares of XLV @ $ 123.43  = $ 5872.49
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   + buy 15.87 shares of XLY @ $ 170.91  = $ 2711.98
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: INFO:root:   + buy 13.27 shares of XLI @ $ 104.7  = $ 1389.28
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: {
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "account_value": 101082.59937394252,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "goal_allocation": {
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLE": 0.11963882949693211,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLF": 0.018396349949924916,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLU": 0.09696773917557429,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLK": 0.23169113796011104,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLV": 0.11991038374829908,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLY": 0.26938349841741444,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLP": 0.051447928062967,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLB": 0.00011528417390153537,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLI": 0.09244884901487564
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     },
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "requested_recommendation_time": null,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "actual_recommendation_time": "2021-05-14 20:00:43",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "cur_time": "2021-05-15",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "recommendation_run_end_date": "2021-05-14 00:00:00",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "orders": [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLE",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             51.255840029900966
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLF",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             183.39992083388307
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLK",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             12.228962170508442
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLP",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             10.434353405725576
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLB",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             0.14699863574351976
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "buy",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLU",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             32.07993932499052
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "buy",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLV",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             47.57749331604958
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "buy",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLY",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             15.868347912583012
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "buy",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             "XLI",
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:             13.269149952244506
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         ]
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     "prices": {
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLY": 170.905,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLV": 123.43,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLU": 65.925,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLP": 70.91,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLK": 136.005,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLI": 104.7,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLF": 37.895,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLE": 53.51,
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:         "XLB": 87.96
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]:     }
+May 15 15:53:46 the-rain-maker trader_SuperShady_UNCORRELATED[2301797]: }
+May 15 15:53:47 the-rain-maker trader_SuperShady_UNCORRELATED[2301753]: executing per host config action:
+May 15 15:53:47 the-rain-maker trader_SuperShady_UNCORRELATED[2301753]: ./update_google_sheets.sh
+May 15 15:53:47 the-rain-maker trader_SuperShady_UNCORRELATED[2301937]: Exporting alpaca portfolios
+May 15 15:53:47 the-rain-maker trader_SuperShady_UNCORRELATED[2301937]: + ./alpaca_portfolio_exporter.py --endpoint http://localhost:8420 --alpaca-vars-file ../vault/varfiles/ALPACA --output-file runs/2021-05-15-155347_alpaca_portfolio_export.csv
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]: Traceback (most recent call last):
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]:   File "./alpaca_portfolio_exporter.py", line 159, in <module>
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]:     sys.exit(main())
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]:   File "./alpaca_portfolio_exporter.py", line 156, in main
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]:     export(**vars(args))
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]:   File "./alpaca_portfolio_exporter.py", line 40, in export
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]:     alpaca_vars_data = dstock_alpaca.get_alpaca_vars_data(alpaca_vars_file, "None", api_key, secret_key)
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2301944]: TypeError: get_alpaca_vars_data() missing 1 required positional argument: 'base_url'
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2302250]: generating post service report for : trader_SuperShady_UNCORRELATED
+May 15 15:53:50 the-rain-maker trader_SuperShady_UNCORRELATED[2302250]: Generating email content ...

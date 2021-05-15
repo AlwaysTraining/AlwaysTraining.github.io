@@ -1,0 +1,97 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-15/post_service/155350_trader_SuperShady_VFUNDS/
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+● trader_SuperShady_VFUNDS.service - dstock SuperShady palloc VFUNDS trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperShady_VFUNDS.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperShady_VFUNDS.timer
+    Process: 2301754 ExecStart=/home/dkarimi/work/dstock/palloc_trader --allocation-source palloc_sqlite --portfolio VFUNDS --which-api alpaca --api-key PK6ERGPSF505AO4LHXIR --secret-key mgnaxeckqlHK8Ho447q1GyzeEx36Yd5MPPFx8kSa --sqlite-file /home/dkarimi/work/databases/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 2301754 (code=exited, status=0/SUCCESS); Control PID: 2302174 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 3.2M
+     CGroup: /system.slice/trader_SuperShady_VFUNDS.service
+             ├─2302174 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio VFUNDS --service-name trader_SuperShady_VFUNDS
+             └─2302212 systemctl status trader_SuperShady_VFUNDS -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sat 2021-05-15 15:53:50 EDT. --
+May 15 15:53:42 the-rain-maker systemd[1]: Starting dstock SuperShady palloc VFUNDS trader service...
+May 15 15:53:44 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:Logging into Alpaca
+May 15 15:53:44 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:Canceling existing orders
+May 15 15:53:45 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:Requesting current orders
+May 15 15:53:45 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:There are orders, waited 1 times for them to go...
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:Requesting current orders
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:   - sell 188.02 shares of VXF @ $ 177.97  = $ 33462.36
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:   - sell 223.5 shares of VWO @ $ 51.85  = $ 11588.58
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:   - sell 6.07 shares of VTI @ $ 215.66  = $ 1308.88
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:   + buy 324.02 shares of VEA @ $ 51.53  = $ 16696.8
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:   + buy 77.01 shares of VOO @ $ 382.95  = $ 29490.06
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: INFO:root:   + buy 2.52 shares of VXUS @ $ 65.0  = $ 163.79
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: {
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "account_value": 99259.84126767043,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "goal_allocation": {
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VXF": 0.00029735495456232876,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VEA": 0.16868806205110543,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VWO": 0.12197938076546432,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VOO": 0.4020711778245404,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VXUS": 0.1080184471884471,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VTI": 0.19894557721588044
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     },
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "requested_recommendation_time": null,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "actual_recommendation_time": "2021-05-14 20:00:37",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "cur_time": "2021-05-15",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "recommendation_run_end_date": "2021-05-14 00:00:00",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "orders": [
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "VXF",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             188.01719342604298
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "VWO",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             223.50202507232402
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "sell",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "VTI",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             6.069323688298428
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "buy",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "VEA",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             324.0209586648554
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "buy",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "VOO",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             77.00759890325108
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         [
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "buy",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             "VXUS",
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:             2.519846153846139
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         ]
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     ],
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     "prices": {
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VXUS": 65.0,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VXF": 177.975,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VWO": 51.85,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VTI": 215.655,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VOO": 382.95,
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:         "VEA": 51.53
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]:     }
+May 15 15:53:46 the-rain-maker trader_SuperShady_VFUNDS[2301811]: }
+May 15 15:53:47 the-rain-maker trader_SuperShady_VFUNDS[2301754]: executing per host config action:
+May 15 15:53:47 the-rain-maker trader_SuperShady_VFUNDS[2301754]: ./update_google_sheets.sh
+May 15 15:53:47 the-rain-maker trader_SuperShady_VFUNDS[2301929]: Exporting alpaca portfolios
+May 15 15:53:47 the-rain-maker trader_SuperShady_VFUNDS[2301929]: + ./alpaca_portfolio_exporter.py --endpoint http://localhost:8420 --alpaca-vars-file ../vault/varfiles/ALPACA --output-file runs/2021-05-15-155347_alpaca_portfolio_export.csv
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]: Traceback (most recent call last):
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]:   File "./alpaca_portfolio_exporter.py", line 159, in <module>
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]:     sys.exit(main())
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]:   File "./alpaca_portfolio_exporter.py", line 156, in main
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]:     export(**vars(args))
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]:   File "./alpaca_portfolio_exporter.py", line 40, in export
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]:     alpaca_vars_data = dstock_alpaca.get_alpaca_vars_data(alpaca_vars_file, "None", api_key, secret_key)
+May 15 15:53:49 the-rain-maker trader_SuperShady_VFUNDS[2301936]: TypeError: get_alpaca_vars_data() missing 1 required positional argument: 'base_url'
+May 15 15:53:50 the-rain-maker trader_SuperShady_VFUNDS[2302174]: generating post service report for : trader_SuperShady_VFUNDS
+May 15 15:53:50 the-rain-maker trader_SuperShady_VFUNDS[2302174]: Generating email content ...
