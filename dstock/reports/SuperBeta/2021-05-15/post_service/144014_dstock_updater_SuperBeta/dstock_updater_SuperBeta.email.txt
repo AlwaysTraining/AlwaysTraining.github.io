@@ -1,0 +1,71 @@
+https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-15/post_service/144014_dstock_updater_SuperBeta/
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+● dstock_updater_SuperBeta.service - dstock SuperBeta updater service
+   Loaded: loaded (/etc/systemd/system/dstock_updater_SuperBeta.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post)
+  Process: 20965 ExecStart=/home/derrick_karimi/dstock/dstock_updater.sh --user derrick_karimi --clean --alpaca-vars-file /home/derrick_karimi/vault/varfiles/beta_super_set --which-api-source tiingo --super-set-name SuperBeta --sqlite-file /home/derrick_karimi/palloc.sqlite --service-name dstock_updater_SuperBeta (code=exited, status=0/SUCCESS)
+ Main PID: 20965 (code=exited, status=0/SUCCESS); Control PID: 21163 (sudo)
+    Tasks: 3 (limit: 4915)
+   CGroup: /system.slice/dstock_updater_SuperBeta.service
+           ├─21163 /usr/bin/sudo --preserve-env=SERVICE_RESULT --preserve-env=EXIT_CODE --preserve-env=EXIT_STATUS -u derrick_karimi /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio None --service-name dstock_updater_SuperBeta
+           ├─21169 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio None --service-name dstock_updater_SuperBeta
+           └─21187 systemctl status dstock_updater_SuperBeta -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 14:40:14 EDT. --
+May 15 14:39:49 the-bug-tank systemd[1]: Starting dstock SuperBeta updater service...
+May 15 14:39:49 the-bug-tank dstock_SuperBeta_updater[20965]: Stopping all tuners...
+May 15 14:40:02 the-bug-tank dstock_SuperBeta_updater[20965]: updating application
+May 15 14:40:02 the-bug-tank dstock_SuperBeta_updater[20965]: + sudo -u derrick_karimi ./dstock_updater_helper.sh --user derrick_karimi --clean --alpaca-vars-file /home/derrick_karimi/vault/varfiles/beta_super_set --which-api-source tiingo --super-set-name SuperBeta --sqlite-file /home/derrick_karimi/palloc.sqlite --service-name dstock_updater_SuperBeta
+May 15 14:40:02 the-bug-tank sudo[21047]:     root : TTY=unknown ; PWD=/home/derrick_karimi/dstock ; USER=derrick_karimi ; COMMAND=./dstock_updater_helper.sh --user derrick_karimi --clean --alpaca-vars-file /home/derrick_karimi/vault/varfiles/beta_super_set --which-api-source tiingo --super-set-name SuperBeta --sqlite-file /home/derrick_karimi/palloc.sqlite --service-name dstock_updater_SuperBeta
+May 15 14:40:02 the-bug-tank sudo[21047]: pam_unix(sudo:session): session opened for user derrick_karimi by (uid=0)
+May 15 14:40:02 the-bug-tank dstock_SuperBeta_updater[20965]: + git status
+May 15 14:40:02 the-bug-tank dstock_SuperBeta_updater[20965]: On branch beta
+May 15 14:40:02 the-bug-tank dstock_SuperBeta_updater[20965]: Your branch is up to date with 'origin/beta'.
+May 15 14:40:02 the-bug-tank dstock_SuperBeta_updater[20965]: nothing to commit, working tree clean
+May 15 14:40:02 the-bug-tank dstock_SuperBeta_updater[20965]: + git pull
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]: From github.com:AlwaysTraining/dstock
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]:    c2c5765..84f4a6e  beta       -> origin/beta
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]: Updating c2c5765..84f4a6e
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]: Fast-forward
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]:  dstock_updater_helper.sh | 4 ++--
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]:  1 file changed, 2 insertions(+), 2 deletions(-)
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]: + set +x
+May 15 14:40:04 the-bug-tank dstock_SuperBeta_updater[20965]: generating report:
+May 15 14:40:05 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Dowloading History and Prices of BOOMERS for 4 days
+May 15 14:40:07 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+May 15 14:40:07 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Funding new account: runs/fomo--2021-05-15--144005--2021-05-10--BOOMERS--trader-baseline/account.json
+May 15 14:40:08 the-bug-tank dstock_SuperBeta_updater[20965]: Written to runs/daily_report_output_2021-05-14/index.html
+May 15 14:40:08 the-bug-tank dstock_SuperBeta_updater[20965]: updating website dstock/reports/SuperBeta/2021-05-15/daily ...
+May 15 14:40:09 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:cd report_website && git pull
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: Already up to date.
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:mkdir -p report_website/dstock/reports/SuperBeta/2021-05-15/daily && cp -vr runs/daily_report_output_2021-05-14/* report_website/dstock/reports/SuperBeta/2021-05-15/daily/
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: 'runs/daily_report_output_2021-05-14/2021-05-14--2021-05-10--BOOMERS--alpaca--daily-open-rebal--mattress--trader-baseline.svg' -> 'report_website/dstock/reports/SuperBeta/2021-05-15/daily/2021-05-14--2021-05-10--BOOMERS--alpaca--daily-open-rebal--mattress--trader-baseline.svg'
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: 'runs/daily_report_output_2021-05-14/index.html' -> 'report_website/dstock/reports/SuperBeta/2021-05-15/daily/index.html'
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Building index for report_website/dstock/reports/SuperBeta/2021-05-15
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:./generate_index.py report_website/dstock/reports/SuperBeta/2021-05-15 --output-file index.html
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Building index for report_website/dstock/reports/SuperBeta
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:./generate_index.py report_website/dstock/reports/SuperBeta --output-file index.html
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Building index for report_website/dstock/reports
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:./generate_index.py report_website/dstock/reports --output-file index.html
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Building index for report_website/dstock
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:./generate_index.py report_website/dstock --output-file index.html
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:Building index for report_website
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:./generate_index.py report_website --output-file index.html
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: INFO:root:
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]:         cd report_website && \
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]:         git add . && \
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]:         git commit -am "Adding report from runs/daily_report_output_2021-05-14 to dstock/reports/SuperBeta/2021-05-15/daily" && \
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]:         git push
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]: [master be69557] Adding report from runs/daily_report_output_2021-05-14 to dstock/reports/SuperBeta/2021-05-15/daily
+May 15 14:40:10 the-bug-tank dstock_SuperBeta_updater[20965]:  2 files changed, 23 insertions(+), 23 deletions(-)
+May 15 14:40:12 the-bug-tank dstock_SuperBeta_updater[20965]: To github.com:AlwaysTraining/AlwaysTraining.github.io.git
+May 15 14:40:12 the-bug-tank dstock_SuperBeta_updater[20965]:    d9c6639..be69557  master -> master
+May 15 14:40:12 the-bug-tank dstock_SuperBeta_updater[20965]: Sending email about website dstock/reports/SuperBeta/2021-05-15/daily ...
+May 15 14:40:13 the-bug-tank sudo[21047]: pam_unix(sudo:session): session closed for user derrick_karimi
+May 15 14:40:13 the-bug-tank dstock_SuperBeta_updater[20965]: + set +x
+May 15 14:40:13 the-bug-tank dstock_SuperBeta_updater[20965]: restarting tuners: tuner_SuperBeta_BOOMERS.service
+May 15 14:40:14 the-bug-tank sudo[21163]:     root : TTY=unknown ; PWD=/home/derrick_karimi/dstock ; USER=derrick_karimi ; ENV=SERVICE_RESULT=success EXIT_CODE=exited EXIT_STATUS=0 ; COMMAND=/home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio None --service-name dstock_updater_SuperBeta
+May 15 14:40:14 the-bug-tank sudo[21163]: pam_unix(sudo:session): session opened for user derrick_karimi by (uid=0)
+May 15 14:40:14 the-bug-tank dstock_SuperBeta_updater[21163]: generating post service report for : dstock_updater_SuperBeta
+May 15 14:40:14 the-bug-tank dstock_SuperBeta_updater[21163]: Generating email content ...
