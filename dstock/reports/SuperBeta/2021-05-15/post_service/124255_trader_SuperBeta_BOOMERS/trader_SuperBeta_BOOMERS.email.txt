@@ -1,0 +1,89 @@
+https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-15/post_service/124255_trader_SuperBeta_BOOMERS/
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+● trader_SuperBeta_BOOMERS.service - dstock SuperBeta palloc BOOMERS trader service
+   Loaded: loaded (/etc/systemd/system/trader_SuperBeta_BOOMERS.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post) (Result: exit-code)
+  Process: 32445 ExecStart=/home/derrick_karimi/dstock/palloc_trader --allocation-source palloc_sqlite --portfolio BOOMERS --which-api alpaca --api-key PK6ZLH6LTSYOTDB6HKVD --secret-key TbF08c3hhiP2JcZtmxsrakOQym4yfkmlBk8JMVq2 --sqlite-file /home/derrick_karimi/palloc.sqlite --base-url {alpaca_url} (code=exited, status=1/FAILURE)
+ Main PID: 32445 (code=exited, status=1/FAILURE); Control PID: 32458 (generate_post_s)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/trader_SuperBeta_BOOMERS.service
+           ├─32458 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio BOOMERS --service-name trader_SuperBeta_BOOMERS
+           └─32474 systemctl status trader_SuperBeta_BOOMERS -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 12:42:55 EDT. --
+May 15 12:42:25 the-bug-tank systemd[1]: Starting dstock SuperBeta palloc BOOMERS trader service...
+May 15 12:42:25 the-bug-tank trader_SuperBeta_BOOMERS[32310]: Not already in a venv
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]: INFO:root:Logging into Alpaca
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]: Traceback (most recent call last):
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:   File "./palloc_trader.py", line 719, in <module>
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:     main(**vars(args))
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:   File "./palloc_trader.py", line 511, in main
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:     alpaca = dstock_alpaca.alpaca_login(base_url, api_key, secret_key)
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:   File "/home/derrick_karimi/dstock/dstock_alpaca.py", line 35, in alpaca_login
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:     secret_key=secret_key)
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/rest.py", line 95, in __init__
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:     self._base_url: URL = URL(base_url or get_base_url())
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/common.py", line 19, in __new__
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]:     raise ValueError(f'Passed string value "{v0}" is not an'
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32310]: ValueError: Passed string value "{alpaca_url}" is not an "http*://" or "ws*://" URL
+May 15 12:42:27 the-bug-tank systemd[1]: trader_SuperBeta_BOOMERS.service: Main process exited, code=exited, status=1/FAILURE
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32329]: Not already in a venv
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32329]: generating post service report for : trader_SuperBeta_BOOMERS
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32329]: Generating email content ...
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32329]: updating website dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS ...
+May 15 12:42:27 the-bug-tank trader_SuperBeta_BOOMERS[32329]: Not already in a venv
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:cd report_website && git pull
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: Already up to date.
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:mkdir -p report_website/dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS && cp -vr runs/trader_SuperBeta_BOOMERS_post_service_report_2021-05-15--124227/* report_website/dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS/
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: 'runs/trader_SuperBeta_BOOMERS_post_service_report_2021-05-15--124227/trader_SuperBeta_BOOMERS.email.txt' -> 'report_website/dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS/trader_SuperBeta_BOOMERS.email.txt'
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: 'runs/trader_SuperBeta_BOOMERS_post_service_report_2021-05-15--124227/trader_SuperBeta_BOOMERS.log.txt' -> 'report_website/dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS/trader_SuperBeta_BOOMERS.log.txt'
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:Building index for report_website/dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:./generate_index.py report_website/dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS --output-file index.html
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:Building index for report_website/dstock/reports/SuperBeta/2021-05-15/post_service
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:./generate_index.py report_website/dstock/reports/SuperBeta/2021-05-15/post_service --output-file index.html
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:Building index for report_website/dstock/reports/SuperBeta/2021-05-15
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:./generate_index.py report_website/dstock/reports/SuperBeta/2021-05-15 --output-file index.html
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:Building index for report_website/dstock/reports/SuperBeta
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:./generate_index.py report_website/dstock/reports/SuperBeta --output-file index.html
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:Building index for report_website/dstock/reports
+May 15 12:42:29 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:./generate_index.py report_website/dstock/reports --output-file index.html
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:Building index for report_website/dstock
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:./generate_index.py report_website/dstock --output-file index.html
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:Building index for report_website
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:./generate_index.py report_website --output-file index.html
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]: INFO:root:
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:         cd report_website && \
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:         git add . && \
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:         git commit -am "Adding report from runs/trader_SuperBeta_BOOMERS_post_service_report_2021-05-15--124227 to dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS" && \
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:         git push
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]: [master 58aef87] Adding report from runs/trader_SuperBeta_BOOMERS_post_service_report_2021-05-15--124227 to dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:  6 files changed, 2903 insertions(+), 2 deletions(-)
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:  create mode 100644 dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS/index.html
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:  create mode 100644 dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS/trader_SuperBeta_BOOMERS.email.txt
+May 15 12:42:30 the-bug-tank trader_SuperBeta_BOOMERS[32329]:  create mode 100644 dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS/trader_SuperBeta_BOOMERS.log.txt
+May 15 12:42:32 the-bug-tank trader_SuperBeta_BOOMERS[32329]: To github.com:AlwaysTraining/AlwaysTraining.github.io.git
+May 15 12:42:32 the-bug-tank trader_SuperBeta_BOOMERS[32329]:    a8d7498..58aef87  master -> master
+May 15 12:42:32 the-bug-tank trader_SuperBeta_BOOMERS[32329]: Sending email about website dstock/reports/SuperBeta/2021-05-15/post_service/124227_trader_SuperBeta_BOOMERS ...
+May 15 12:42:32 the-bug-tank trader_SuperBeta_BOOMERS[32329]: Not already in a venv
+May 15 12:42:34 the-bug-tank systemd[1]: trader_SuperBeta_BOOMERS.service: Failed with result 'exit-code'.
+May 15 12:42:34 the-bug-tank systemd[1]: Failed to start dstock SuperBeta palloc BOOMERS trader service.
+May 15 12:42:53 the-bug-tank systemd[1]: Starting dstock SuperBeta palloc BOOMERS trader service...
+May 15 12:42:53 the-bug-tank trader_SuperBeta_BOOMERS[32445]: Not already in a venv
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]: INFO:root:Logging into Alpaca
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]: Traceback (most recent call last):
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:   File "./palloc_trader.py", line 719, in <module>
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:     main(**vars(args))
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:   File "./palloc_trader.py", line 511, in main
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:     alpaca = dstock_alpaca.alpaca_login(base_url, api_key, secret_key)
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:   File "/home/derrick_karimi/dstock/dstock_alpaca.py", line 35, in alpaca_login
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:     secret_key=secret_key)
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/rest.py", line 95, in __init__
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:     self._base_url: URL = URL(base_url or get_base_url())
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:   File "/home/derrick_karimi/dstock/dstock_venv/lib/python3.6/site-packages/alpaca_trade_api/common.py", line 19, in __new__
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]:     raise ValueError(f'Passed string value "{v0}" is not an'
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32445]: ValueError: Passed string value "{alpaca_url}" is not an "http*://" or "ws*://" URL
+May 15 12:42:55 the-bug-tank systemd[1]: trader_SuperBeta_BOOMERS.service: Main process exited, code=exited, status=1/FAILURE
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32458]: Not already in a venv
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32458]: generating post service report for : trader_SuperBeta_BOOMERS
+May 15 12:42:55 the-bug-tank trader_SuperBeta_BOOMERS[32458]: Generating email content ...
