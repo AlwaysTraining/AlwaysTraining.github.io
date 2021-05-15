@@ -1,0 +1,50 @@
+https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-15/post_service/121650_trader_SuperBeta_BOOMERS/
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+● trader_SuperBeta_BOOMERS.service - dstock SuperBeta palloc BOOMERS trader service
+   Loaded: loaded (/etc/systemd/system/trader_SuperBeta_BOOMERS.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post) (Result: exit-code)
+  Process: 26986 ExecStart=/home/derrick_karimi/dstock/palloc_trader --allocation-source palloc_sqlite --portfolio BOOMERS --which-api alpaca --api-key PK31E0NSVML8SEGI13Y9 --secret-key k2ND5BsojEHuSPS1uxTAf3U7DitVcBrQmMAq4zKD (code=exited, status=1/FAILURE)
+ Main PID: 26986 (code=exited, status=1/FAILURE); Control PID: 26998 (generate_post_s)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/trader_SuperBeta_BOOMERS.service
+           ├─26998 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio BOOMERS --service-name trader_SuperBeta_BOOMERS
+           └─27014 systemctl status trader_SuperBeta_BOOMERS -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sat 2021-05-15 12:16:50 EDT. --
+May 15 12:16:48 the-bug-tank systemd[1]: Starting dstock SuperBeta palloc BOOMERS trader service...
+May 15 12:16:48 the-bug-tank trader_SuperBeta_BOOMERS[26986]: Not already in a venv
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]: Traceback (most recent call last):
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:   File "./palloc_trader.py", line 719, in <module>
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:     main(**vars(args))
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:   File "./palloc_trader.py", line 406, in main
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:     allocation_source
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:   File "./palloc_trader.py", line 164, in __init__
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:     self.portfolio_response = self.get_portfolio_response()
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:   File "./palloc_trader.py", line 184, in get_portfolio_response
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:     pr = dstock_palloc_db.get_portfolio_by_name(self.portfolio, self.recommendation_time)
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:   File "/home/derrick_karimi/dstock/dstock_palloc_db.py", line 230, in get_portfolio_by_name
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:     con, portfolio_name, recommendation_time)
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:   File "/home/derrick_karimi/dstock/dstock_palloc_db.py", line 41, in _get_last_recommendation_info
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]:     rows = con.execute(sql).fetchall()
+May 15 12:16:49 the-bug-tank trader_SuperBeta_BOOMERS[26986]: sqlite3.OperationalError: no such table: palloc_params_table
+May 15 12:16:50 the-bug-tank systemd[1]: trader_SuperBeta_BOOMERS.service: Main process exited, code=exited, status=1/FAILURE
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: ++ date '+%Y-%m-%d %H:%M:%S' '--date=+2 second'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + now_time_str='2021-05-15 12:16:52'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: ++ date +%Y-%m-%d--%H%M%S
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + now_time_str_nospace=2021-05-15--121650
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: ++ date '+%Y-%m-%d %H:%M:%S' '--date=-1 minute'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + five_mins_ago_time_str='2021-05-15 12:15:50'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: ++ date -I '--date=-1 day'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + yesterday=2021-05-14
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + set +x
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: Not already in a venv
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: generating post service report for : trader_SuperBeta_BOOMERS
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: Generating email content ...
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + journalctl -u trader_SuperBeta_BOOMERS --since 2021-05-14
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + echo https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-15/post_service/121650_trader_SuperBeta_BOOMERS/
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + echo 'SERVICE_RESULT  = exit-code'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + echo 'EXIT_CODE       = exited'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + echo 'EXIT_STATUS     = 1'
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + systemctl status trader_SuperBeta_BOOMERS -n 0
+May 15 12:16:50 the-bug-tank trader_SuperBeta_BOOMERS[26998]: + journalctl -u trader_SuperBeta_BOOMERS --since '2021-05-15 12:15:50' --until '2021-05-15 12:16:52'
