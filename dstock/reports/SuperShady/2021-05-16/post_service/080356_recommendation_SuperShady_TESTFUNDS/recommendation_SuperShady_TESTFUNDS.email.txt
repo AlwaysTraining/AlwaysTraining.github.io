@@ -1,0 +1,83 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-16/post_service/080356_recommendation_SuperShady_TESTFUNDS/
+SERVICE_NAME    = recommendation_SuperShady_TESTFUNDS
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 2
+UPTIME          =  08:03:56 up 18 days, 10:58,  2 users,  load average: 12.06, 11.81, 11.78
+● recommendation_SuperShady_TESTFUNDS.service - dstock SuperShady palloc recommendation service
+     Loaded: loaded (/etc/systemd/system/recommendation_SuperShady_TESTFUNDS.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● recommendation_SuperShady_TESTFUNDS.timer
+    Process: 2563002 ExecStart=/home/dkarimi/work/dstock/palloc_recommendation --fund-set TESTFUNDS --results-file /home/dkarimi/work/dstock/runs/TESTFUNDS_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/databases/palloc.sqlite (code=exited, status=2)
+   Main PID: 2563002 (code=exited, status=2); Control PID: 2563067 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 4.0M
+     CGroup: /system.slice/recommendation_SuperShady_TESTFUNDS.service
+             ├─2563067 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio TESTFUNDS --service-name recommendation_SuperShady_TESTFUNDS
+             └─2563083 systemctl status recommendation_SuperShady_TESTFUNDS -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sun 2021-05-16 08:03:56 EDT. --
+May 16 08:03:49 the-rain-maker systemd[1]: Starting dstock SuperShady palloc recommendation service...
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None})
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:Looking up start allocation for 2021-05-16 00:00:00
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fTESTFUNDS.yaml
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key long_term_moving_average = 211
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key long_term_palloc_weight = -8.85071649233691
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key long_term_rolling_stdev = 214
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key short_term_moving_average = 139
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key short_term_palloc_weight = 9.402313344034955
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key short_term_rolling_stdev = 107
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key break_even_tol = None
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 08:03:50 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:Utilizing last recommendation detrmined new start: 2021-05-15 00:00:00
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key long_term_moving_average = 282
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key long_term_palloc_weight = 2.065528205462847
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key long_term_rolling_stdev = 100
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key short_term_moving_average = 52
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key short_term_palloc_weight = 6.953923532520722
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key short_term_rolling_stdev = 98
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key break_even_tol = None
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:dstock_cfg loaded from DB (config row id = 241577)
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:Found existing config row: 241577
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:Starting allocations from 2021-05-14: [AAPL 18.6%, AIG 20.7%, FB 19.5%, GOOG 29.1%, IBM 1.9%, BAC 0.0%, WM 10.1%]
+May 16 08:03:51 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:User specified start 2021-05-15 00:00:00 was buffered to 2020-03-01 00:00:00
+May 16 08:03:53 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: INFO:root:computing palloc strategy iteration 1 of 1 starting 2021-05-15 00:00:00 over 24 hours
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:firstprices (for 2021-05-15 00:00:00) is None and last_prices (for 2021-05-15 00:00:00) is None
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:timepoints:
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: {'dataset_start': Timestamp('2020-03-02 00:00:00'),
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:  'nice_prices': Timestamp('2021-04-13 00:00:00'),
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:  'nice_stats': Timestamp('2021-04-13 00:00:00'),
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:  'non_null': Timestamp('2021-04-13 00:00:00'),
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:  'window_actual_start': Timestamp('2020-03-02 00:00:00')}
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: WARNING:root:{'iterations': [], 'statistics': {}}
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: Traceback (most recent call last):
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:   File "./dstock.py", line 2493, in <module>
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:     sys.exit(main())
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:   File "./dstock.py", line 2490, in main
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:     function(**vars(args))
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:   File "./dstock.py", line 2250, in palloc_main
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]:     raise Exception(
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563010]: Exception: Not enough successfull iterations, got 0 out of 1
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563002]: executing per host config action:
+May 16 08:03:54 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563002]: scp /home/dkarimi/work/databases/palloc.sqlite derrick_karimi@35.237.70.62:/home/derrick_karimi/palloc.sqlite
+May 16 08:03:56 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563002]: /home/dkarimi/work/dstock/palloc_recommendation: line 24: exit: --fund-set: numeric argument required
+May 16 08:03:56 the-rain-maker systemd[1]: recommendation_SuperShady_TESTFUNDS.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+May 16 08:03:56 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563067]: generating post service report for : recommendation_SuperShady_TESTFUNDS
+May 16 08:03:56 the-rain-maker recommendation_SuperShady_TESTFUNDS[2563067]: Generating email content ...
