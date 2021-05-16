@@ -1,0 +1,83 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-16/post_service/080637_recommendation_SuperShady_UNCORRELATED/
+SERVICE_NAME    = recommendation_SuperShady_UNCORRELATED
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 2
+UPTIME          =  08:06:37 up 18 days, 11:01,  2 users,  load average: 12.29, 12.00, 11.85
+● recommendation_SuperShady_UNCORRELATED.service - dstock SuperShady palloc recommendation service
+     Loaded: loaded (/etc/systemd/system/recommendation_SuperShady_UNCORRELATED.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● recommendation_SuperShady_UNCORRELATED.timer
+    Process: 2563715 ExecStart=/home/dkarimi/work/dstock/palloc_recommendation --fund-set UNCORRELATED --results-file /home/dkarimi/work/dstock/runs/UNCORRELATED_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/databases/palloc.sqlite (code=exited, status=2)
+   Main PID: 2563715 (code=exited, status=2); Control PID: 2563764 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 4.2M
+     CGroup: /system.slice/recommendation_SuperShady_UNCORRELATED.service
+             ├─2563764 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio UNCORRELATED --service-name recommendation_SuperShady_UNCORRELATED
+             └─2563779 systemctl status recommendation_SuperShady_UNCORRELATED -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sun 2021-05-16 08:06:37 EDT. --
+May 16 08:06:29 the-rain-maker systemd[1]: Starting dstock SuperShady palloc recommendation service...
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None})
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:Looking up start allocation for 2021-05-16 00:00:00
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fUNCORRELATED.yaml
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key long_term_moving_average = 197
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key long_term_palloc_weight = -3.88412533091544
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key long_term_rolling_stdev = 120
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key short_term_moving_average = 86
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key short_term_palloc_weight = 7.997362327768027
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key short_term_rolling_stdev = 70
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key break_even_tol = None
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 08:06:30 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:Utilizing last recommendation detrmined new start: 2021-05-15 00:00:00
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key long_term_moving_average = 185
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key long_term_palloc_weight = -5.241603789297852
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key long_term_rolling_stdev = 319
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key short_term_moving_average = 120
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key short_term_palloc_weight = 4.562709184233036
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key short_term_rolling_stdev = 95
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key break_even_tol = None
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:dstock_cfg loaded from DB (config row id = 245477)
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:Found existing config row: 245477
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:Starting allocations from 2021-05-14: [XLE 12.0%, XLF 1.8%, XLU 9.7%, XLK 23.2%, XLV 12.0%, XLY 26.9%, XLP 5.1%, XLB 0.0%, XLI 9.2%]
+May 16 08:06:31 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:User specified start 2021-05-15 00:00:00 was buffered to 2020-01-01 12:00:00
+May 16 08:06:33 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: INFO:root:computing palloc strategy iteration 1 of 1 starting 2021-05-15 00:00:00 over 24 hours
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:firstprices (for 2021-05-15 00:00:00) is None and last_prices (for 2021-05-15 00:00:00) is None
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:timepoints:
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: {'dataset_start': Timestamp('2020-01-02 00:00:00'),
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:  'nice_prices': Timestamp('2021-04-08 00:00:00'),
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:  'nice_stats': Timestamp('2021-04-08 00:00:00'),
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:  'non_null': Timestamp('2021-04-08 00:00:00'),
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:  'window_actual_start': Timestamp('2020-01-02 00:00:00')}
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: WARNING:root:{'iterations': [], 'statistics': {}}
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: Traceback (most recent call last):
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:   File "./dstock.py", line 2493, in <module>
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:     sys.exit(main())
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:   File "./dstock.py", line 2490, in main
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:     function(**vars(args))
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:   File "./dstock.py", line 2250, in palloc_main
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]:     raise Exception(
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563723]: Exception: Not enough successfull iterations, got 0 out of 1
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563715]: executing per host config action:
+May 16 08:06:35 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563715]: scp /home/dkarimi/work/databases/palloc.sqlite derrick_karimi@35.237.70.62:/home/derrick_karimi/palloc.sqlite
+May 16 08:06:37 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563715]: /home/dkarimi/work/dstock/palloc_recommendation: line 24: exit: --fund-set: numeric argument required
+May 16 08:06:37 the-rain-maker systemd[1]: recommendation_SuperShady_UNCORRELATED.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+May 16 08:06:37 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563764]: generating post service report for : recommendation_SuperShady_UNCORRELATED
+May 16 08:06:37 the-rain-maker recommendation_SuperShady_UNCORRELATED[2563764]: Generating email content ...
