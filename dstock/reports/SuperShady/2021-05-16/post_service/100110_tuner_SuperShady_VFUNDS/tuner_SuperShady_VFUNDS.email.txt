@@ -1,0 +1,25 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-16/post_service/100110_tuner_SuperShady_VFUNDS/
+SERVICE_NAME    = tuner_SuperShady_VFUNDS
+SERVICE_RESULT  = success
+EXIT_CODE       = killed
+EXIT_STATUS     = TERM
+UPTIME          =  10:01:10 up 18 days, 12:55,  2 users,  load average: 11.52, 11.64, 11.73
+● tuner_SuperShady_VFUNDS.service - dstock SuperShady palloc VFUNDS tuner service
+     Loaded: loaded (/etc/systemd/system/tuner_SuperShady_VFUNDS.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) since Sun 2021-05-16 10:01:10 EDT; 102ms ago
+    Process: 2319045 ExecStart=/home/dkarimi/work/dstock/palloc_tuner --fund-set VFUNDS --self-seeded-file /home/dkarimi/work/dstock/runs/SuperShady_VFUNDS_tuner_seed.cfg --sqlite-file /home/dkarimi/work/databases/palloc.sqlite (code=killed, signal=TERM)
+   Main PID: 2319045 (code=killed, signal=TERM); Control PID: 2591449 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 109.9M
+     CGroup: /system.slice/tuner_SuperShady_VFUNDS.service
+             ├─2591449 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio VFUNDS --service-name tuner_SuperShady_VFUNDS
+             └─2591532 systemctl status tuner_SuperShady_VFUNDS -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sun 2021-05-16 10:01:10 EDT. --
+May 16 10:00:27 the-rain-maker tuner_SuperShady_VFUNDS[2319172]: [ 62208s]    INFO root: {tuning: 83.4%, fund_set: VFUNDS, n: 30, score: 3.330 %, stdev: 3.158%, alpha: 6.487%}
+May 16 10:00:27 the-rain-maker tuner_SuperShady_VFUNDS[2319172]: [ 62208s]    INFO root: {0: 1484, 1: 629, since_last_best: 1857, records: 32, bad cfg: 609, since_last_record: 1247, bests: 33, record: 3.991 %}
+May 16 10:01:08 the-rain-maker tuner_SuperShady_VFUNDS[2319172]: [ 62249s]    INFO root: {tuning: 65.3%, fund_set: VFUNDS, n: 30, score: 2.604 %, stdev: 2.813%, alpha: 5.417%}
+May 16 10:01:08 the-rain-maker tuner_SuperShady_VFUNDS[2319172]: [ 62249s]    INFO opentuner.search.plugin.DisplayPlugin: tests=2114, best #1334, cost time=-0.0399, found by NormalGreedyMutation
+May 16 10:01:08 the-rain-maker tuner_SuperShady_VFUNDS[2319172]: [ 62249s]    INFO root: {0: 1485, 1: 629, since_last_best: 1858, records: 32, bad cfg: 609, since_last_record: 1248, bests: 33, record: 3.991 %}
+May 16 10:01:10 the-rain-maker systemd[1]: Stopping dstock SuperShady palloc VFUNDS tuner service...
+May 16 10:01:10 the-rain-maker tuner_SuperShady_VFUNDS[2591449]: generating post service report for : tuner_SuperShady_VFUNDS
+May 16 10:01:10 the-rain-maker tuner_SuperShady_VFUNDS[2591449]: Generating email content ...

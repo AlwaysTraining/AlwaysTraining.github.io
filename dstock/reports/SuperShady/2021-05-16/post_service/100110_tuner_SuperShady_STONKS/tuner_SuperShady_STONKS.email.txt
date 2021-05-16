@@ -1,0 +1,23 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-16/post_service/100110_tuner_SuperShady_STONKS/
+SERVICE_NAME    = tuner_SuperShady_STONKS
+SERVICE_RESULT  = success
+EXIT_CODE       = killed
+EXIT_STATUS     = TERM
+UPTIME          =  10:01:11 up 18 days, 12:55,  2 users,  load average: 11.52, 11.64, 11.73
+● tuner_SuperShady_STONKS.service - dstock SuperShady palloc STONKS tuner service
+     Loaded: loaded (/etc/systemd/system/tuner_SuperShady_STONKS.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) since Sun 2021-05-16 10:01:10 EDT; 205ms ago
+    Process: 2319056 ExecStart=/home/dkarimi/work/dstock/palloc_tuner --fund-set STONKS --self-seeded-file /home/dkarimi/work/dstock/runs/SuperShady_STONKS_tuner_seed.cfg --sqlite-file /home/dkarimi/work/databases/palloc.sqlite (code=killed, signal=TERM)
+   Main PID: 2319056 (code=killed, signal=TERM); Control PID: 2591470 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 92.9M
+     CGroup: /system.slice/tuner_SuperShady_STONKS.service
+             ├─2591470 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio STONKS --service-name tuner_SuperShady_STONKS
+             └─2591596 systemctl status tuner_SuperShady_STONKS -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sun 2021-05-16 10:01:11 EDT. --
+May 16 10:00:19 the-rain-maker tuner_SuperShady_STONKS[2319182]: [ 62199s]    INFO root: {tuning: -2.1%, fund_set: STONKS, n: 30, score: -1.817 %, stdev: 21.956%, alpha: 20.14%}
+May 16 10:00:19 the-rain-maker tuner_SuperShady_STONKS[2319182]: [ 62200s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1147, best #1442, cost time=-0.8522, found by UniformGreedyMutation
+May 16 10:00:19 the-rain-maker tuner_SuperShady_STONKS[2319182]: [ 62200s]    INFO root: {0: 714, 1: 433, since_last_best: 420, records: 23, bad cfg: 419, since_last_record: 274, bests: 24, record: 85.215 %}
+May 16 10:01:10 the-rain-maker systemd[1]: Stopping dstock SuperShady palloc STONKS tuner service...
+May 16 10:01:10 the-rain-maker tuner_SuperShady_STONKS[2591470]: generating post service report for : tuner_SuperShady_STONKS
+May 16 10:01:10 the-rain-maker tuner_SuperShady_STONKS[2591470]: Generating email content ...
