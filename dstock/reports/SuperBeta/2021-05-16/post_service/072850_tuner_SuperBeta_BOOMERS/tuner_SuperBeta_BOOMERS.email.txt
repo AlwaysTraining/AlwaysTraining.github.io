@@ -1,0 +1,39 @@
+https://alwaystraining.github.io/dstock/reports/SuperBeta/2021-05-16/post_service/072850_tuner_SuperBeta_BOOMERS/
+SERVICE_NAME    = tuner_SuperBeta_BOOMERS
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  07:28:50 up 19 days,  6:17,  5 users,  load average: 2.50, 2.40, 2.35
+● tuner_SuperBeta_BOOMERS.service - dstock SuperBeta palloc BOOMERS tuner service
+   Loaded: loaded (/etc/systemd/system/tuner_SuperBeta_BOOMERS.service; enabled; vendor preset: enabled)
+   Active: deactivating (stop-post) (Result: exit-code) since Sun 2021-05-16 07:28:49 EDT; 113ms ago
+  Process: 8632 ExecStart=/home/derrick_karimi/dstock/palloc_tuner --fund-set BOOMERS --self-seeded-file /home/derrick_karimi/dstock/runs/SuperBeta_BOOMERS_tuner_seed.cfg --sqlite-file /home/derrick_karimi/palloc.sqlite (code=exited, status=1/FAILURE)
+ Main PID: 8632 (code=exited, status=1/FAILURE); Control PID: 21718 (generate_post_s)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/tuner_SuperBeta_BOOMERS.service
+           ├─21718 /bin/bash /home/derrick_karimi/dstock/generate_post_service_report.sh --super-set-name SuperBeta --portfolio BOOMERS --service-name tuner_SuperBeta_BOOMERS
+           └─21736 systemctl status tuner_SuperBeta_BOOMERS -n 0
+-- Logs begin at Fri 2020-10-09 00:09:05 EDT, end at Sun 2021-05-16 07:28:50 EDT. --
+May 16 07:27:58 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53578s]    INFO root: {tuning: -72.3%, fund_set: BOOMERS, n: 30, score: -48.683 %, stdev: 15.269%, alpha: -33.414%}
+May 16 07:27:58 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53578s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4965, best #16054, cost time=-0.6736, found by UniformGreedyMutation
+May 16 07:27:58 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53578s]    INFO root: {0: 3743, 1: 1221, since_last_best: 509, records: 54, record: 67.359 %, since_last_record: 431, bests: 55, 124: 1, bad cfg: 1161}
+May 16 07:28:12 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53592s]    INFO root: {tuning: 57.5%, fund_set: BOOMERS, n: 30, score: 38.705 %, stdev: 13.04%, alpha: 51.745%}
+May 16 07:28:12 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53592s]    INFO root: {0: 3744, 1: 1221, since_last_best: 510, records: 54, record: 67.359 %, since_last_record: 432, bests: 55, 124: 1, bad cfg: 1161}
+May 16 07:28:24 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53604s]    INFO root: {tuning: -98.3%, fund_set: BOOMERS, n: 30, score: -66.227 %, stdev: 24.134%, alpha: -42.092%}
+May 16 07:28:24 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53604s]    INFO root: {0: 3745, 1: 1221, since_last_best: 511, records: 54, record: 67.359 %, since_last_record: 433, bests: 55, 124: 1, bad cfg: 1161}
+May 16 07:28:37 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53617s]    INFO root: {tuning: 78.2%, fund_set: BOOMERS, n: 30, score: 52.689 %, stdev: 13.021%, alpha: 65.71%}
+May 16 07:28:37 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53617s]    INFO root: {0: 3746, 1: 1221, since_last_best: 512, records: 54, record: 67.359 %, since_last_record: 434, bests: 55, 124: 1, bad cfg: 1161}
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53629s]    INFO root: {tuning: -73.5%, fund_set: BOOMERS, n: 30, score: -49.518 %, stdev: 18.106%, alpha: -31.411%}
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53629s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4969, best #16054, cost time=-0.6736, found by UniformGreedyMutation
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: [ 53629s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4969, best #16054, cost time=-0.6736, found by UniformGreedyMutation
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: Traceback (most recent call last):
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]:   File "tuner.py", line 393, in <module>
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]:     DStockFlagsTuner.main(opentuner_args)
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]:   File "/home/derrick_karimi/dstock/opentuner_venv/local/lib/python2.7/site-packages/opentuner/measurement/interface.py", line 301, in main
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]:     return TuningRunMain(cls(args, *pargs, **kwargs), args).main()
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]:   File "/home/derrick_karimi/dstock/opentuner_venv/local/lib/python2.7/site-packages/opentuner/tuningrunmain.py", line 204, in main
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]:     self.search_driver.best_result.configuration)
+May 16 07:28:49 the-bug-tank tuner_SuperBeta_BOOMERS[8632]: TypeError: save_final_config() takes exactly 3 arguments (2 given)
+May 16 07:28:49 the-bug-tank systemd[1]: tuner_SuperBeta_BOOMERS.service: Main process exited, code=exited, status=1/FAILURE
+May 16 07:28:50 the-bug-tank tuner_SuperBeta_BOOMERS[21718]: generating post service report for : tuner_SuperBeta_BOOMERS
+May 16 07:28:50 the-bug-tank tuner_SuperBeta_BOOMERS[21718]: Generating email content ...
