@@ -1,0 +1,83 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-16/post_service/040155_recommendation_SuperShady_SP500/
+SERVICE_NAME    = recommendation_SuperShady_SP500
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 2
+UPTIME          =  04:01:55 up 18 days,  6:56,  2 users,  load average: 12.29, 11.97, 11.92
+● recommendation_SuperShady_SP500.service - dstock SuperShady palloc recommendation service
+     Loaded: loaded (/etc/systemd/system/recommendation_SuperShady_SP500.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● recommendation_SuperShady_SP500.timer
+    Process: 2501570 ExecStart=/home/dkarimi/work/dstock/palloc_recommendation --fund-set SP500 --results-file /home/dkarimi/work/dstock/runs/SP500_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/databases/palloc.sqlite (code=exited, status=2)
+   Main PID: 2501570 (code=exited, status=2); Control PID: 2502012 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 7.0M
+     CGroup: /system.slice/recommendation_SuperShady_SP500.service
+             ├─2502012 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio SP500 --service-name recommendation_SuperShady_SP500
+             └─2502027 systemctl status recommendation_SuperShady_SP500 -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sun 2021-05-16 04:01:55 EDT. --
+May 16 04:01:49 the-rain-maker systemd[1]: Starting dstock SuperShady palloc recommendation service...
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None})
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:Looking up start allocation for 2021-05-16 00:00:00
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:Loaded file: dstock_cfg.palloc.fSP500.yaml
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key long_term_moving_average = 3
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key long_term_palloc_weight = 4.831942302178387
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key long_term_rolling_stdev = 332
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key short_term_moving_average = 2
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key short_term_palloc_weight = -5.570164577115655
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key short_term_rolling_stdev = 125
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key break_even_tol = None
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 04:01:50 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:Utilizing last recommendation detrmined new start: 2021-05-15 00:00:00
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key long_term_moving_average = 353
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key long_term_palloc_weight = -3.348105324697441
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key long_term_rolling_stdev = 363
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key short_term_moving_average = 79
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key short_term_palloc_weight = 9.297394089145406
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key short_term_rolling_stdev = 295
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key break_even_tol = None
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:dstock_cfg loaded from DB (config row id = 248764)
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:Found existing config row: 248764
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:Starting allocations from 2021-05-14: [SPY 0.3%, VOO 0.7%, IVV 27.8%, SPLG 71.2%]
+May 16 04:01:52 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:User specified start 2021-05-15 00:00:00 was buffered to 2019-11-01 12:00:00
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]: INFO:root:computing palloc strategy iteration 1 of 1 starting 2021-05-15 00:00:00 over 24 hours
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]: WARNING:root:firstprices (for 2021-05-15 00:00:00) is None and last_prices (for 2021-05-15 00:00:00) is None
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]: WARNING:root:timepoints:
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]: {'dataset_start': Timestamp('2019-11-01 00:00:00'),
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:  'nice_prices': Timestamp('2021-04-13 00:00:00'),
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:  'nice_stats': Timestamp('2021-04-13 00:00:00'),
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:  'non_null': Timestamp('2021-04-13 00:00:00'),
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:  'window_actual_start': Timestamp('2019-11-01 00:00:00')}
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]: WARNING:root:{'iterations': [], 'statistics': {}}
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]: Traceback (most recent call last):
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:   File "./dstock.py", line 2493, in <module>
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:     sys.exit(main())
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:   File "./dstock.py", line 2490, in main
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:     function(**vars(args))
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:   File "./dstock.py", line 2250, in palloc_main
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]:     raise Exception(
+May 16 04:01:53 the-rain-maker recommendation_SuperShady_SP500[2501578]: Exception: Not enough successfull iterations, got 0 out of 1
+May 16 04:01:54 the-rain-maker recommendation_SuperShady_SP500[2501570]: executing per host config action:
+May 16 04:01:54 the-rain-maker recommendation_SuperShady_SP500[2501570]: scp /home/dkarimi/work/databases/palloc.sqlite derrick_karimi@35.237.70.62:/home/derrick_karimi/palloc.sqlite
+May 16 04:01:55 the-rain-maker recommendation_SuperShady_SP500[2501570]: /home/dkarimi/work/dstock/palloc_recommendation: line 24: exit: --fund-set: numeric argument required
+May 16 04:01:55 the-rain-maker systemd[1]: recommendation_SuperShady_SP500.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+May 16 04:01:55 the-rain-maker recommendation_SuperShady_SP500[2502012]: generating post service report for : recommendation_SuperShady_SP500
+May 16 04:01:55 the-rain-maker recommendation_SuperShady_SP500[2502012]: Generating email content ...
