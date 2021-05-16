@@ -1,0 +1,83 @@
+https://alwaystraining.github.io/dstock/reports/SuperShady/2021-05-16/post_service/080055_recommendation_SuperShady_SCHMOO/
+SERVICE_NAME    = recommendation_SuperShady_SCHMOO
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 2
+UPTIME          =  08:00:55 up 18 days, 10:55,  2 users,  load average: 11.87, 11.77, 11.77
+● recommendation_SuperShady_SCHMOO.service - dstock SuperShady palloc recommendation service
+     Loaded: loaded (/etc/systemd/system/recommendation_SuperShady_SCHMOO.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● recommendation_SuperShady_SCHMOO.timer
+    Process: 2562043 ExecStart=/home/dkarimi/work/dstock/palloc_recommendation --fund-set SCHMOO --results-file /home/dkarimi/work/dstock/runs/SCHMOO_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/databases/palloc.sqlite (code=exited, status=2)
+   Main PID: 2562043 (code=exited, status=2); Control PID: 2562091 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 3.4M
+     CGroup: /system.slice/recommendation_SuperShady_SCHMOO.service
+             ├─2562091 /bin/bash /home/dkarimi/work/dstock/generate_post_service_report.sh --super-set-name SuperShady --portfolio SCHMOO --service-name recommendation_SuperShady_SCHMOO
+             └─2562106 systemctl status recommendation_SuperShady_SCHMOO -n 0
+-- Logs begin at Sun 2021-04-25 21:12:27 EDT, end at Sun 2021-05-16 08:00:55 EDT. --
+May 16 08:00:49 the-rain-maker systemd[1]: Starting dstock SuperShady palloc recommendation service...
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None})
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:Looking up start allocation for 2021-05-16 00:00:00
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fSCHMOO.yaml
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key long_term_moving_average = 126
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key long_term_palloc_weight = 2.057978521543191
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key long_term_rolling_stdev = 93
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key short_term_moving_average = 3
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key short_term_palloc_weight = -9.484978215702943
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key short_term_rolling_stdev = 33
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key break_even_tol = None
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 08:00:50 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:Utilizing last recommendation detrmined new start: 2021-05-15 00:00:00
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key long_term_moving_average = 226
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key long_term_palloc_weight = 3.127611951325086
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key long_term_rolling_stdev = 94
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key palloc_realloc_floor = 0.05
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key palloc_realloc_thresh = 0.0
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key short_term_moving_average = 222
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key short_term_palloc_weight = -1.5338173952822203
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key short_term_rolling_stdev = 36
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key break_even_tol = None
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_grow = None
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_max = None
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_min = None
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key hyster_buffer_shrink = None
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:No column type mapping set up for (14, 'brute_force_unload_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:No column type mapping set up for (15, 'brute_force_loadon_risk_ma_type', 'TEXT', 0, None, 0)
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:inserting config key volitility_rolling_window = None
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:dstock_cfg loaded from DB (config row id = 245408)
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:Found existing config row: 245408
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:Starting allocations from 2021-05-14: [VOT 22.6%, VOE 10.1%, VUG 18.3%, VTV 0.0%, VBK 30.7%, VBR 18.4%]
+May 16 08:00:51 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:User specified start 2021-05-15 00:00:00 was buffered to 2020-06-01 00:00:00
+May 16 08:00:52 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: INFO:root:computing palloc strategy iteration 1 of 1 starting 2021-05-15 00:00:00 over 24 hours
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:firstprices (for 2021-05-15 00:00:00) is None and last_prices (for 2021-05-15 00:00:00) is None
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:timepoints:
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: {'dataset_start': Timestamp('2020-06-01 00:00:00'),
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:  'nice_prices': Timestamp('2021-04-22 00:00:00'),
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:  'nice_stats': Timestamp('2021-04-22 00:00:00'),
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:  'non_null': Timestamp('2021-04-22 00:00:00'),
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:  'window_actual_start': Timestamp('2020-06-01 00:00:00')}
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: WARNING:root:{'iterations': [], 'statistics': {}}
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: Traceback (most recent call last):
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:   File "./dstock.py", line 2493, in <module>
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:     sys.exit(main())
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:   File "./dstock.py", line 2490, in main
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:     function(**vars(args))
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:   File "./dstock.py", line 2250, in palloc_main
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]:     raise Exception(
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562051]: Exception: Not enough successfull iterations, got 0 out of 1
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562043]: executing per host config action:
+May 16 08:00:53 the-rain-maker recommendation_SuperShady_SCHMOO[2562043]: scp /home/dkarimi/work/databases/palloc.sqlite derrick_karimi@35.237.70.62:/home/derrick_karimi/palloc.sqlite
+May 16 08:00:55 the-rain-maker recommendation_SuperShady_SCHMOO[2562043]: /home/dkarimi/work/dstock/palloc_recommendation: line 24: exit: --fund-set: numeric argument required
+May 16 08:00:55 the-rain-maker systemd[1]: recommendation_SuperShady_SCHMOO.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+May 16 08:00:55 the-rain-maker recommendation_SuperShady_SCHMOO[2562091]: generating post service report for : recommendation_SuperShady_SCHMOO
+May 16 08:00:55 the-rain-maker recommendation_SuperShady_SCHMOO[2562091]: Generating email content ...
