@@ -1,0 +1,29 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-08-24/post_service/010118_dstock_updater_SuperGangsta/
+SERVICE_NAME    = dstock_updater_SuperGangsta
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  01:01:18 up 118 days,  3:56,  1 user,  load average: 11.66, 11.62, 11.64
+● dstock_updater_SuperGangsta.service - dstock SuperGangsta updater service
+     Loaded: loaded (/etc/systemd/system/dstock_updater_SuperGangsta.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● dstock_updater_SuperGangsta.timer
+    Process: 1113333 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/dstock/dstock_updater.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/dstock/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 (code=exited, status=0/SUCCESS)
+   Main PID: 1113333 (code=exited, status=0/SUCCESS); Control PID: 1113417 (sudo)
+      Tasks: 3 (limit: 9017)
+     Memory: 5.6M
+     CGroup: /system.slice/dstock_updater_SuperGangsta.service
+             ├─1113417 /usr/bin/sudo --preserve-env=SERVICE_RESULT --preserve-env=EXIT_CODE --preserve-env=EXIT_STATUS -u dkarimi /home/dkarimi/work/supersets/SuperGangsta/dstock/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             ├─1113418 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/dstock/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             └─1113439 systemctl status dstock_updater_SuperGangsta -n 0
+-- Logs begin at Mon 2021-06-14 17:17:01 EDT, end at Tue 2021-08-24 01:01:18 EDT. --
+Aug 24 01:01:08 the-rain-maker systemd[1]: Starting dstock SuperGangsta updater service...
+Aug 24 01:01:08 the-rain-maker sudo[1113339]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta/dstock ; USER=dkarimi ; COMMAND=./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/dstock/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Aug 24 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1113333]: updating application
+Aug 24 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1113333]: + sudo -u dkarimi ./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/dstock/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Aug 24 01:01:08 the-rain-maker sudo[1113339]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Aug 24 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1113340]: Clearing Dir: runs
+Aug 24 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1113340]: Clearing Dir: opentuner.db
+Aug 24 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1113340]: Clearing Dir: download_cache
+Aug 24 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1113340]: !!!
+Aug 24 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1113340]: !!! It is now time to update dstock
