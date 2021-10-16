@@ -1,0 +1,45 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-10-15/post_service/083228_trader_SuperGangsta_TESTFUNDS0830/
+SERVICE_NAME    = trader_SuperGangsta_TESTFUNDS0830
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  08:32:29 up 170 days, 11:27,  1 user,  load average: 12.41, 17.17, 19.84
+● trader_SuperGangsta_TESTFUNDS0830.service - dstock SuperGangsta palloc TESTFUNDS0830 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperGangsta_TESTFUNDS0830.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● trader_SuperGangsta_TESTFUNDS0830.timer
+    Process: 3014801 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/palloc_trader --allocation-source palloc_sqlite --portfolio TESTFUNDS0830 --which-api alpaca --api-key PKOLDC76AELKNDA13XA7 --secret-key kNEfeplKZ2KptK2s2bPPxe8jbJlgyfd6NnVLd0R6 --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=1/FAILURE)
+   Main PID: 3014801 (code=exited, status=1/FAILURE); Control PID: 3014817 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 4.1M
+     CGroup: /system.slice/trader_SuperGangsta_TESTFUNDS0830.service
+             ├─3014817 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830 --service-name trader_SuperGangsta_TESTFUNDS0830 --send-success-emails
+             └─3014833 systemctl status trader_SuperGangsta_TESTFUNDS0830 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Fri 2021-10-15 08:32:28 EDT. --
+Oct 15 08:32:26 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc TESTFUNDS0830 trader service...
+Oct 15 08:32:27 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]: INFO:root:Logging into Alpaca
+Oct 15 08:32:27 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]: INFO:root:Canceling existing orders
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]: Traceback (most recent call last):
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 160, in _one_request
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     resp.raise_for_status()
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/models.py", line 953, in raise_for_status
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     raise HTTPError(http_error_msg, response=self)
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]: requests.exceptions.HTTPError: 503 Server Error: Service Unavailable for url: https://paper-api.alpaca.markets/v2/orders
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]: During handling of the above exception, another exception occurred:
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]: Traceback (most recent call last):
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "./palloc_trader.py", line 737, in <module>
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     main(**vars(args))
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "./palloc_trader.py", line 527, in main
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     alpaca.cancel_all_orders()
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 410, in cancel_all_orders
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     self.delete('/orders')
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 188, in delete
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     return self._request('DELETE', path, data)
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 139, in _request
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     return self._one_request(method, url, opts, retry)
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 168, in _one_request
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]:     raise APIError(error, http_error)
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014808]: alpaca_trade_api.rest.APIError: service unavailable
+Oct 15 08:32:28 the-rain-maker systemd[1]: trader_SuperGangsta_TESTFUNDS0830.service: Main process exited, code=exited, status=1/FAILURE
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014817]: generating post service report for : trader_SuperGangsta_TESTFUNDS0830
+Oct 15 08:32:28 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[3014817]: Generating email content ...
