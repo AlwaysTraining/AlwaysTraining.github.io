@@ -1,0 +1,28 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-10-16/post_service/150135_recommendation_SuperGangsta_TESTFUNDS1550/
+SERVICE_NAME    = recommendation_SuperGangsta_TESTFUNDS1550
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  15:01:35 up 171 days, 17:56,  1 user,  load average: 11.12, 15.48, 18.07
+● recommendation_SuperGangsta_TESTFUNDS1550.service - dstock SuperGangsta palloc recommendation service
+     Loaded: loaded (/etc/systemd/system/recommendation_SuperGangsta_TESTFUNDS1550.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● recommendation_SuperGangsta_TESTFUNDS1550.timer
+    Process: 3248470 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/palloc_recommendation --fund-set TESTFUNDS1550 --results-file /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS1550_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --set-auto-config 0 --cfg-file dstock_cfg.palloc.yaml (code=exited, status=0/SUCCESS)
+   Main PID: 3248470 (code=exited, status=0/SUCCESS); Control PID: 3248548 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 4.1M
+     CGroup: /system.slice/recommendation_SuperGangsta_TESTFUNDS1550.service
+             ├─3248548 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS1550 --service-name recommendation_SuperGangsta_TESTFUNDS1550 --send-success-emails
+             └─3248563 systemctl status recommendation_SuperGangsta_TESTFUNDS1550 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Sat 2021-10-16 15:01:35 EDT. --
+Oct 16 15:01:26 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc recommendation service...
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248470]: + timeout -s 3 -k 5s 1000s ./dstock.py palloc --start-after-last-recommendation --results-file runs/TESTFUNDS1550_recommendation_results.yaml --diagnostic-mode --auto-config --start-date 2021-10-15 --end-date 2021-10-15 --record-portfolio --fund-set TESTFUNDS1550 --results-file /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS1550_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --set-auto-config 0 --cfg-file dstock_cfg.palloc.yaml
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None, 'no_random_time_lane': False})
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: INFO:root:Looking up start allocation for 2021-10-16 00:00:00
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fTESTFUNDS1550.yaml
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: INFO:root:Utilizing last recommendation detrmined new start: 2021-10-15
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: INFO:root:dstock_cfg loaded from file (cfg_file = dstock_cfg.palloc.yaml)
+Oct 16 15:01:26 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: INFO:root:Starting allocations from 2021-10-14: [AAPL 19.6%, AIG 15.2%, FB 30.6%, GOOG 11.2%, IBM 16.0%, BAC 2.4%, WM 5.0%]
+Oct 16 15:01:28 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[3248480]: /home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/pandas_datareader/tiingo.py:234: FutureWarning: In a future version of pandas all arguments of concat except for the argument 'objs' will be keyword-only
