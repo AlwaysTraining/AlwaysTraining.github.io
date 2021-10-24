@@ -1,0 +1,28 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-10-23/post_service/133209_trader_SuperGangsta_TESTFUNDS1330/
+SERVICE_NAME    = trader_SuperGangsta_TESTFUNDS1330
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  13:32:10 up 178 days, 16:26,  1 user,  load average: 19.47, 18.93, 17.37
+● trader_SuperGangsta_TESTFUNDS1330.service - dstock SuperGangsta palloc TESTFUNDS1330 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperGangsta_TESTFUNDS1330.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperGangsta_TESTFUNDS1330.timer
+    Process: 1113012 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/palloc_trader --allocation-source palloc_sqlite --portfolio TESTFUNDS1330 --which-api alpaca --api-key PKW1FYN214R2L5QRA1BA --secret-key QZXEnfApvUjwnhg6H8v2TabKyukpq1F2X8bR3TZq --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 1113012 (code=exited, status=0/SUCCESS); Control PID: 1113032 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 4.0M
+     CGroup: /system.slice/trader_SuperGangsta_TESTFUNDS1330.service
+             ├─1113032 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS1330 --service-name trader_SuperGangsta_TESTFUNDS1330 --send-success-emails
+             └─1113048 systemctl status trader_SuperGangsta_TESTFUNDS1330 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Sat 2021-10-23 13:32:09 EDT. --
+Oct 23 13:32:07 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc TESTFUNDS1330 trader service...
+Oct 23 13:32:08 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:Logging into Alpaca
+Oct 23 13:32:08 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:Canceling existing orders
+Oct 23 13:32:08 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:Requesting current orders
+Oct 23 13:32:09 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:   - sell 1.96 shares of BAC @ $ 47.57  = $ 93.13
+Oct 23 13:32:09 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:   - sell 19.61 shares of WM @ $ 164.46  = $ 3225.6
+Oct 23 13:32:09 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:   + buy 1.26 shares of AAPL @ $ 148.56  = $ 187.1
+Oct 23 13:32:09 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:   + buy 0.81 shares of AIG @ $ 60.01  = $ 48.85
+Oct 23 13:32:09 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:   + buy 4.01 shares of FB @ $ 323.55  = $ 1298.41
+Oct 23 13:32:09 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[1113021]: INFO:root:   + buy 0.61 shares of GOOG @ $ 2772.13  = $ 1689.1
