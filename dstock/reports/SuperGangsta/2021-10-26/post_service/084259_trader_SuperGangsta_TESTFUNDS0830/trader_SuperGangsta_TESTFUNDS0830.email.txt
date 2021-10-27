@@ -1,0 +1,68 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-10-26/post_service/084259_trader_SuperGangsta_TESTFUNDS0830/
+SERVICE_NAME    = trader_SuperGangsta_TESTFUNDS0830
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  08:43:01 up 181 days, 11:37,  1 user,  load average: 22.76, 20.96, 17.53
+● trader_SuperGangsta_TESTFUNDS0830.service - dstock SuperGangsta palloc TESTFUNDS0830 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperGangsta_TESTFUNDS0830.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● trader_SuperGangsta_TESTFUNDS0830.timer
+    Process: 1623380 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/palloc_trader --allocation-source palloc_sqlite --portfolio TESTFUNDS0830 --which-api alpaca --api-key PKOLDC76AELKNDA13XA7 --secret-key kNEfeplKZ2KptK2s2bPPxe8jbJlgyfd6NnVLd0R6 --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=1/FAILURE)
+   Main PID: 1623380 (code=exited, status=1/FAILURE); Control PID: 1623521 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 5.0M
+     CGroup: /system.slice/trader_SuperGangsta_TESTFUNDS0830.service
+             ├─1623521 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830 --service-name trader_SuperGangsta_TESTFUNDS0830 --send-success-emails
+             └─1623551 systemctl status trader_SuperGangsta_TESTFUNDS0830 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Tue 2021-10-26 08:43:01 EDT. --
+Oct 26 08:42:56 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc TESTFUNDS0830 trader service...
+Oct 26 08:42:58 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: INFO:root:Logging into Alpaca
+Oct 26 08:42:58 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: INFO:root:Canceling existing orders
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 169, in _new_conn
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     conn = connection.create_connection(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/usr/lib/python3.8/socket.py", line 918, in getaddrinfo
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: socket.gaierror: [Errno -3] Temporary failure in name resolution
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     httplib_response = self._make_request(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     self._validate_conn(conn)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     conn.connect()
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 353, in connect
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     conn = self._new_conn()
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 181, in _new_conn
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     raise NewConnectionError(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f136962dd90>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     resp = conn.urlopen(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     retries = retries.increment(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/orders (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f136962dd90>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "./palloc_trader.py", line 737, in <module>
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     main(**vars(args))
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "./palloc_trader.py", line 527, in main
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     alpaca.cancel_all_orders()
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 410, in cancel_all_orders
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     self.delete('/orders')
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 188, in delete
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     return self._request('DELETE', path, data)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 139, in _request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     return self._one_request(method, url, opts, retry)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 158, in _one_request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     resp = self._session.request(method, url, **opts)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     resp = self.send(prep, **send_kwargs)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/sessions.py", line 655, in send

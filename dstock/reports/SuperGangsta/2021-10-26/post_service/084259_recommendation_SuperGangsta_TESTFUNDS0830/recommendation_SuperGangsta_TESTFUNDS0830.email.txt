@@ -1,0 +1,68 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-10-26/post_service/084259_recommendation_SuperGangsta_TESTFUNDS0830/
+SERVICE_NAME    = recommendation_SuperGangsta_TESTFUNDS0830
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  08:43:01 up 181 days, 11:37,  1 user,  load average: 22.76, 20.96, 17.53
+● recommendation_SuperGangsta_TESTFUNDS0830.service - dstock SuperGangsta palloc recommendation service
+     Loaded: loaded (/etc/systemd/system/recommendation_SuperGangsta_TESTFUNDS0830.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● recommendation_SuperGangsta_TESTFUNDS0830.timer
+    Process: 1623374 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/palloc_recommendation --fund-set TESTFUNDS0830 --results-file /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS0830_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --set-auto-config 0 --cfg-file dstock_cfg.palloc.yaml (code=exited, status=1/FAILURE)
+   Main PID: 1623374 (code=exited, status=1/FAILURE); Control PID: 1623535 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 4.5M
+     CGroup: /system.slice/recommendation_SuperGangsta_TESTFUNDS0830.service
+             ├─1623535 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830 --service-name recommendation_SuperGangsta_TESTFUNDS0830 --send-success-emails
+             └─1623554 systemctl status recommendation_SuperGangsta_TESTFUNDS0830 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Tue 2021-10-26 08:43:01 EDT. --
+Oct 26 08:42:56 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc recommendation service...
+Oct 26 08:42:56 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623374]: + timeout -s 3 -k 5s 1000s ./dstock.py palloc --start-after-last-recommendation --results-file runs/TESTFUNDS0830_recommendation_results.yaml --diagnostic-mode --auto-config --start-date 2021-10-25 --end-date 2021-10-25 --record-portfolio --fund-set TESTFUNDS0830 --results-file /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS0830_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --set-auto-config 0 --cfg-file dstock_cfg.palloc.yaml
+Oct 26 08:42:58 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None, 'no_random_time_lane': False})
+Oct 26 08:42:58 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: INFO:root:Looking up start allocation for 2021-10-26 00:00:00
+Oct 26 08:42:58 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+Oct 26 08:42:58 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fTESTFUNDS0830.yaml
+Oct 26 08:42:58 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: INFO:root:Utilizing last recommendation detrmined new start: 2021-10-23 00:00:00
+Oct 26 08:42:58 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: INFO:root:dstock_cfg loaded from file (cfg_file = dstock_cfg.palloc.yaml)
+Oct 26 08:42:58 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: INFO:root:Starting allocations from 2021-10-22: [AAPL 15.7%, AIG 13.9%, FB 21.8%, GOOG 16.7%, IBM 27.8%, BAC 1.6%, WM 2.5%]
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 169, in _new_conn
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     conn = connection.create_connection(
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/usr/lib/python3.8/socket.py", line 918, in getaddrinfo
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: socket.gaierror: [Errno -3] Temporary failure in name resolution
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     httplib_response = self._make_request(
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     self._validate_conn(conn)
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     conn.connect()
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 353, in connect
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     conn = self._new_conn()
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 181, in _new_conn
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     raise NewConnectionError(
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fa809c2c580>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     resp = conn.urlopen(
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     retries = retries.increment(
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.tiingo.com', port=443): Max retries exceeded with url: /tiingo/daily/AAPL/prices?startDate=2020-01-01&endDate=2021-10-25&format=json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa809c2c580>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "./dstock.py", line 2448, in <module>
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     sys.exit(main())
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "./dstock.py", line 2445, in main
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     function(**vars(args))
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "./dstock.py", line 1919, in palloc_main
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     pstocks = cached_download2(
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "./dstock.py", line 1315, in cached_download2
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:     stock = csv_downloader.download_prices_with_pandas(
+Oct 26 08:42:59 the-rain-maker recommendation_SuperGangsta_TESTFUNDS0830[1623415]:   File "/home/dkarimi/work/supersets/SuperGangsta/csv_downloader.py", line 49, in download_prices_with_pandas
