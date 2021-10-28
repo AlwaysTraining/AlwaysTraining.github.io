@@ -1,0 +1,233 @@
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Wed 2021-10-27 08:36:33 EDT. --
+Oct 26 08:42:56 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc TESTFUNDS0830 trader service...
+Oct 26 08:42:58 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: INFO:root:Logging into Alpaca
+Oct 26 08:42:58 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: INFO:root:Canceling existing orders
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 169, in _new_conn
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     conn = connection.create_connection(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/usr/lib/python3.8/socket.py", line 918, in getaddrinfo
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: socket.gaierror: [Errno -3] Temporary failure in name resolution
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     httplib_response = self._make_request(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     self._validate_conn(conn)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     conn.connect()
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 353, in connect
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     conn = self._new_conn()
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connection.py", line 181, in _new_conn
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     raise NewConnectionError(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f136962dd90>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     resp = conn.urlopen(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     retries = retries.increment(
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/orders (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f136962dd90>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: During handling of the above exception, another exception occurred:
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: Traceback (most recent call last):
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "./palloc_trader.py", line 737, in <module>
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     main(**vars(args))
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "./palloc_trader.py", line 527, in main
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     alpaca.cancel_all_orders()
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 410, in cancel_all_orders
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     self.delete('/orders')
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 188, in delete
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     return self._request('DELETE', path, data)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 139, in _request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     return self._one_request(method, url, opts, retry)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 158, in _one_request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     resp = self._session.request(method, url, **opts)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     resp = self.send(prep, **send_kwargs)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     r = adapter.send(request, **kwargs)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:   File "/home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/requests/adapters.py", line 516, in send
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]:     raise ConnectionError(e, request=request)
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623408]: requests.exceptions.ConnectionError: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/orders (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f136962dd90>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Oct 26 08:42:59 the-rain-maker systemd[1]: trader_SuperGangsta_TESTFUNDS0830.service: Main process exited, code=exited, status=1/FAILURE
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623521]: generating post service report for : trader_SuperGangsta_TESTFUNDS0830
+Oct 26 08:42:59 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623521]: Generating email content ...
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623521]: Sending email about website dstock/reports/SuperGangsta/2021-10-26/post_service/084259_trader_SuperGangsta_TESTFUNDS0830 ...
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]: Traceback (most recent call last):
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:   File "./send_mail.py", line 81, in <module>
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:     send_mail(**vars(parser.parse_args()))
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:   File "./send_mail.py", line 57, in send_mail
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:     smtp = smtplib.SMTP(server, port)
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:   File "/usr/lib/python3.8/smtplib.py", line 255, in __init__
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:     (code, msg) = self.connect(host, port)
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:   File "/usr/lib/python3.8/smtplib.py", line 339, in connect
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:     self.sock = self._get_socket(host, port, self.timeout)
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:   File "/usr/lib/python3.8/smtplib.py", line 310, in _get_socket
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:     return socket.create_connection((host, port), timeout,
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:   File "/usr/lib/python3.8/socket.py", line 787, in create_connection
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:     for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:   File "/usr/lib/python3.8/socket.py", line 918, in getaddrinfo
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+Oct 26 08:43:01 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1623565]: socket.gaierror: [Errno -3] Temporary failure in name resolution
+Oct 26 08:43:01 the-rain-maker systemd[1]: trader_SuperGangsta_TESTFUNDS0830.service: Control process exited, code=exited, status=1/FAILURE
+Oct 26 08:43:01 the-rain-maker systemd[1]: trader_SuperGangsta_TESTFUNDS0830.service: Failed with result 'exit-code'.
+Oct 26 08:43:01 the-rain-maker systemd[1]: Failed to start dstock SuperGangsta palloc TESTFUNDS0830 trader service.
+Oct 26 08:50:28 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc TESTFUNDS0830 trader service...
+Oct 26 08:50:29 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:Logging into Alpaca
+Oct 26 08:50:29 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:Canceling existing orders
+Oct 26 08:50:30 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:Requesting current orders
+Oct 26 08:50:30 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:   - sell 2.47 shares of AAPL @ $ 149.0  = $ 367.36
+Oct 26 08:50:30 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:   - sell 2.36 shares of AIG @ $ 59.62  = $ 140.98
+Oct 26 08:50:30 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:   - sell 4.49 shares of FB @ $ 332.25  = $ 1492.18
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:   - sell 0.1 shares of GOOG @ $ 2775.51  = $ 267.33
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:   - sell 3.85 shares of IBM @ $ 127.69  = $ 491.61
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:   + buy 0.67 shares of BAC @ $ 47.49  = $ 31.88
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: INFO:root:   + buy 16.86 shares of WM @ $ 161.14  = $ 2717.04
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: {
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "account_value": 100384.56510923473,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "goal_allocation": {
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "AAPL": 0.15327487266729334,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "AIG": 0.13589388388272455,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "FB": 0.2074894337755748,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "GOOG": 0.16355517695985802,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "IBM": 0.2716789022814385,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "BAC": 0.016327574444416546,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "WM": 0.051780155988694364
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     },
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "requested_recommendation_time": null,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "actual_recommendation_time": "2021-10-26 08:50:17",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "cur_time": "2021-10-26",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "recommendation_run_end_date": "2021-10-25 00:00:00",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "orders": [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "sell",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "AAPL",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             2.4655033557047017
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         ],
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "sell",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "AIG",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             2.364642737336457
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         ],
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "sell",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "FB",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             4.4911361926260245
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         ],
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "sell",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "GOOG",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             0.09631743355275309
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         ],
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "sell",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "IBM",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             3.850178172847246
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         ],
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "buy",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "BAC",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             0.6712992208886056
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         ],
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         [
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "buy",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             "WM",
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:             16.861362790120396
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         ]
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     ],
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "prices": {
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "WM": 161.14,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "IBM": 127.685,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "GOOG": 2775.51,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "FB": 332.25,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "BAC": 47.49,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "AIG": 59.62,
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:         "AAPL": 149.0
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     },
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]:     "time_lane": null
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627719]: }
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627740]: generating post service report for : trader_SuperGangsta_TESTFUNDS0830
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627740]: Generating email content ...
+Oct 26 08:50:31 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1627740]: Sending email about website dstock/reports/SuperGangsta/2021-10-26/post_service/085031_trader_SuperGangsta_TESTFUNDS0830 ...
+Oct 26 08:50:32 the-rain-maker systemd[1]: trader_SuperGangsta_TESTFUNDS0830.service: Succeeded.
+Oct 26 08:50:32 the-rain-maker systemd[1]: Finished dstock SuperGangsta palloc TESTFUNDS0830 trader service.
+Oct 27 08:36:31 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc TESTFUNDS0830 trader service...
+Oct 27 08:36:32 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:Logging into Alpaca
+Oct 27 08:36:32 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:Canceling existing orders
+Oct 27 08:36:32 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:Requesting current orders
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:   - sell 2.74 shares of AAPL @ $ 149.27  = $ 408.98
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:   - sell 0.59 shares of GOOG @ $ 2797.91  = $ 1640.08
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:   - sell 13.09 shares of IBM @ $ 127.18  = $ 1665.31
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:   - sell 2.23 shares of BAC @ $ 47.97  = $ 107.02
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:   + buy 0.33 shares of AIG @ $ 59.24  = $ 19.67
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:   + buy 3.75 shares of FB @ $ 315.85  = $ 1184.11
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: INFO:root:   + buy 16.71 shares of WM @ $ 159.23  = $ 2661.28
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: {
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "account_value": 99321.86485811364,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "goal_allocation": {
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "AAPL": 0.15107780631176573,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "AIG": 0.13668208109157926,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "FB": 0.21128018241996727,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "GOOG": 0.15012686487914556,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "IBM": 0.2567329667449619,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "BAC": 0.01559165657545187,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "WM": 0.0785084419771286
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     },
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "requested_recommendation_time": null,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "actual_recommendation_time": "2021-10-27 08:03:49",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "cur_time": "2021-10-27",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "recommendation_run_end_date": "2021-10-26 00:00:00",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "orders": [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "sell",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "AAPL",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             2.7398673544583607
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         ],
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "sell",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "GOOG",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             0.5861793514098891
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         ],
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "sell",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "IBM",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             13.094118572102513
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         ],
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "sell",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "BAC",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             2.2309776943923283
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         ],
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "buy",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "AIG",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             0.3320111401806072
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         ],
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "buy",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "FB",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             3.7489631154028826
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         ],
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         [
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "buy",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             "WM",
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:             16.713433398228982
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         ]
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     ],
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "prices": {
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "WM": 159.23,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "IBM": 127.18,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "GOOG": 2797.915,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "FB": 315.85,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "BAC": 47.97,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "AIG": 59.245,
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:         "AAPL": 149.27
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     },
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]:     "time_lane": null
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1887980]: }
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1888001]: generating post service report for : trader_SuperGangsta_TESTFUNDS0830
+Oct 27 08:36:33 the-rain-maker trader_SuperGangsta_TESTFUNDS0830[1888001]: Generating email content ...
