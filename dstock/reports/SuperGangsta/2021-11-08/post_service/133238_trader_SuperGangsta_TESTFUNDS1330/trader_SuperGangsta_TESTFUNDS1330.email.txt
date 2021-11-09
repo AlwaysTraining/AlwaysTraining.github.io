@@ -1,0 +1,68 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-11-08/post_service/133238_trader_SuperGangsta_TESTFUNDS1330/
+SERVICE_NAME    = trader_SuperGangsta_TESTFUNDS1330
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  13:32:38 up 194 days, 17:27,  1 user,  load average: 33.66, 29.20, 27.53
+● trader_SuperGangsta_TESTFUNDS1330.service - dstock SuperGangsta palloc TESTFUNDS1330 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperGangsta_TESTFUNDS1330.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● trader_SuperGangsta_TESTFUNDS1330.timer
+    Process: 469247 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/palloc_trader --allocation-source palloc_sqlite --portfolio TESTFUNDS1330 --which-api alpaca --api-key PKW1FYN214R2L5QRA1BA --secret-key QZXEnfApvUjwnhg6H8v2TabKyukpq1F2X8bR3TZq --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=1/FAILURE)
+   Main PID: 469247 (code=exited, status=1/FAILURE); Control PID: 469263 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 3.8M
+     CGroup: /system.slice/trader_SuperGangsta_TESTFUNDS1330.service
+             ├─469263 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS1330 --service-name trader_SuperGangsta_TESTFUNDS1330 --send-success-emails
+             └─469279 systemctl status trader_SuperGangsta_TESTFUNDS1330 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Mon 2021-11-08 13:32:38 EST. --
+Nov 08 13:32:31 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc TESTFUNDS1330 trader service...
+Nov 08 13:32:32 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Logging into Alpaca
+Nov 08 13:32:32 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Canceling existing orders
+Nov 08 13:32:33 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Requesting current orders
+Nov 08 13:32:33 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:There are orders, waited 1 times for them to go...
+Nov 08 13:32:34 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Requesting current orders
+Nov 08 13:32:34 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:There are orders, waited 2 times for them to go...
+Nov 08 13:32:35 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Requesting current orders
+Nov 08 13:32:35 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:There are orders, waited 3 times for them to go...
+Nov 08 13:32:36 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Requesting current orders
+Nov 08 13:32:36 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:There are orders, waited 4 times for them to go...
+Nov 08 13:32:37 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Requesting current orders
+Nov 08 13:32:37 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:There are orders, waited 5 times for them to go...
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Requesting current orders
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Order: Order({   'asset_class': 'us_equity',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'asset_id': '21d40833-6d13-4031-9af3-02f6a516d791',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'canceled_at': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'client_order_id': '8ef613ed-e906-4cc6-8626-58978d15d90d',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'created_at': '2021-11-07T18:33:07.185856Z',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'expired_at': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'extended_hours': False,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'failed_at': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'filled_at': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'filled_avg_price': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'filled_qty': '0',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'hwm': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'id': 'b9ddf2bd-129c-4f6a-b969-d8c000ea60ea',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'legs': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'limit_price': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'notional': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'order_class': '',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'order_type': 'market',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'qty': '1.557595858',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'replaced_at': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'replaced_by': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'replaces': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'side': 'buy',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'status': 'pending_cancel',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'stop_price': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'submitted_at': '2021-11-07T18:33:07.182494Z',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'symbol': 'IBM',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'time_in_force': 'day',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'trail_percent': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'trail_price': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'type': 'market',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'updated_at': '2021-11-08T18:32:33.012652Z'})
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]: INFO:root:Order: Order({   'asset_class': 'us_equity',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'asset_id': 'b0b6dd9d-8b9b-48a9-ba46-b9d54906e415',
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'canceled_at': None,
+Nov 08 13:32:38 the-rain-maker trader_SuperGangsta_TESTFUNDS1330[469254]:     'client_order_id': '4015f784-969c-44e6-abec-ddedaae8b5d2',
