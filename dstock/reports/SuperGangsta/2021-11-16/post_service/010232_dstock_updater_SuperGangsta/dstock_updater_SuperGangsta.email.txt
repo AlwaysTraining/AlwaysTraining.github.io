@@ -1,0 +1,29 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-11-16/post_service/010232_dstock_updater_SuperGangsta/
+SERVICE_NAME    = dstock_updater_SuperGangsta
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  01:02:32 up 202 days,  4:57,  0 users,  load average: 22.50, 27.79, 27.16
+● dstock_updater_SuperGangsta.service - dstock SuperGangsta updater service
+     Loaded: loaded (/etc/systemd/system/dstock_updater_SuperGangsta.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● dstock_updater_SuperGangsta.timer
+    Process: 2657062 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/dstock_updater.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 (code=exited, status=0/SUCCESS)
+   Main PID: 2657062 (code=exited, status=0/SUCCESS); Control PID: 2657307 (sudo)
+      Tasks: 3 (limit: 9017)
+     Memory: 50.9M
+     CGroup: /system.slice/dstock_updater_SuperGangsta.service
+             ├─2657307 /usr/bin/sudo --preserve-env=SERVICE_RESULT --preserve-env=EXIT_CODE --preserve-env=EXIT_STATUS -u dkarimi /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             ├─2657309 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             └─2657324 systemctl status dstock_updater_SuperGangsta -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Tue 2021-11-16 01:02:32 EST. --
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657069]: Clearing Dir: opentuner.db
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657069]: Clearing Dir: download_cache
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657069]: !!!
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657069]: !!! It is now time to update dstock
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657069]: !!!
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657069]: + git status
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657135]: On branch release
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657135]: Your branch is up to date with 'origin/release'.
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657135]: nothing to commit, working tree clean
+Nov 16 01:01:38 the-rain-maker dstock_updater_SuperGangsta[2657069]: + git pull
