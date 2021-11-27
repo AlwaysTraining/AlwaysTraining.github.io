@@ -1,0 +1,29 @@
+https://alwaystraining.github.io/dstock/reports/SuperBench/2021-11-19/post_service/000255_dstock_updater_SuperBench/
+SERVICE_NAME    = dstock_updater_SuperBench
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  00:02:57 up 205 days,  3:57,  1 user,  load average: 34.40, 28.69, 28.31
+● dstock_updater_SuperBench.service - dstock SuperBench updater service
+     Loaded: loaded (/etc/systemd/system/dstock_updater_SuperBench.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● dstock_updater_SuperBench.timer
+    Process: 3523681 ExecStart=/home/dkarimi/work/supersets/SuperBench/dstock_updater.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/ALPACA --which-api-source tiingo --super-set-name SuperBench --sqlite-file /home/dkarimi/work/supersets/SuperBench/palloc.sqlite --service-name dstock_updater_SuperBench --portfolio SCHMOO,SP500,STONKS,TESTFUNDS,UNCORRELATED,VFUNDS --daily-report-style baseline_report (code=exited, status=0/SUCCESS)
+   Main PID: 3523681 (code=exited, status=0/SUCCESS); Control PID: 3523961 (sudo)
+      Tasks: 3 (limit: 9017)
+     Memory: 12.8M
+     CGroup: /system.slice/dstock_updater_SuperBench.service
+             ├─3523961 /usr/bin/sudo --preserve-env=SERVICE_RESULT --preserve-env=EXIT_CODE --preserve-env=EXIT_STATUS -u dkarimi /home/dkarimi/work/supersets/SuperBench/generate_post_service_report.sh --super-set-name SuperBench --portfolio SCHMOO,SP500,STONKS,TESTFUNDS,UNCORRELATED,VFUNDS --service-name dstock_updater_SuperBench --send-success-emails
+             ├─3523962 /bin/bash /home/dkarimi/work/supersets/SuperBench/generate_post_service_report.sh --super-set-name SuperBench --portfolio SCHMOO,SP500,STONKS,TESTFUNDS,UNCORRELATED,VFUNDS --service-name dstock_updater_SuperBench --send-success-emails
+             └─3523979 systemctl status dstock_updater_SuperBench -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Fri 2021-11-19 00:02:55 EST. --
+Nov 19 00:02:12 the-rain-maker systemd[1]: Starting dstock SuperBench updater service...
+Nov 19 00:02:12 the-rain-maker dstock_updater_SuperBench[3523681]: updating application
+Nov 19 00:02:12 the-rain-maker dstock_updater_SuperBench[3523681]: + sudo -u dkarimi ./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/ALPACA --which-api-source tiingo --super-set-name SuperBench --sqlite-file /home/dkarimi/work/supersets/SuperBench/palloc.sqlite --service-name dstock_updater_SuperBench --portfolio SCHMOO,SP500,STONKS,TESTFUNDS,UNCORRELATED,VFUNDS --daily-report-style baseline_report
+Nov 19 00:02:12 the-rain-maker sudo[3523687]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperBench ; USER=dkarimi ; COMMAND=./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/ALPACA --which-api-source tiingo --super-set-name SuperBench --sqlite-file /home/dkarimi/work/supersets/SuperBench/palloc.sqlite --service-name dstock_updater_SuperBench --portfolio SCHMOO,SP500,STONKS,TESTFUNDS,UNCORRELATED,VFUNDS --daily-report-style baseline_report
+Nov 19 00:02:12 the-rain-maker sudo[3523687]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Nov 19 00:02:12 the-rain-maker dstock_updater_SuperBench[3523688]: Clearing Dir: runs
+Nov 19 00:02:12 the-rain-maker dstock_updater_SuperBench[3523688]: Clearing Dir: opentuner.db
+Nov 19 00:02:12 the-rain-maker dstock_updater_SuperBench[3523688]: Clearing Dir: download_cache
+Nov 19 00:02:12 the-rain-maker dstock_updater_SuperBench[3523688]: !!!
+Nov 19 00:02:12 the-rain-maker dstock_updater_SuperBench[3523688]: !!! It is now time to update dstock
