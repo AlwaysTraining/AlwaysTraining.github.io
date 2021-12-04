@@ -1,0 +1,29 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2021-12-03/post_service/010239_dstock_updater_SuperGangsta/
+SERVICE_NAME    = dstock_updater_SuperGangsta
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  01:02:40 up 219 days,  4:57,  1 user,  load average: 3.84, 6.16, 6.97
+● dstock_updater_SuperGangsta.service - dstock SuperGangsta updater service
+     Loaded: loaded (/etc/systemd/system/dstock_updater_SuperGangsta.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● dstock_updater_SuperGangsta.timer
+    Process: 325149 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/dstock_updater.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 (code=exited, status=0/SUCCESS)
+   Main PID: 325149 (code=exited, status=0/SUCCESS); Control PID: 325945 (sudo)
+      Tasks: 3 (limit: 9017)
+     Memory: 40.6M
+     CGroup: /system.slice/dstock_updater_SuperGangsta.service
+             ├─325945 /usr/bin/sudo --preserve-env=SERVICE_RESULT --preserve-env=EXIT_CODE --preserve-env=EXIT_STATUS -u dkarimi /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             ├─325948 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             └─325967 systemctl status dstock_updater_SuperGangsta -n 0
+-- Logs begin at Tue 2021-07-06 17:17:01 EDT, end at Fri 2021-12-03 01:02:39 EST. --
+Dec 03 01:01:51 the-rain-maker dstock_updater_SuperGangsta[325223]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $97814.609864 on 2021-12-02 00:00:00
+Dec 03 01:01:51 the-rain-maker dstock_updater_SuperGangsta[325223]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Dec 03 01:01:52 the-rain-maker dstock_updater_SuperGangsta[325223]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Dec 03 01:01:52 the-rain-maker dstock_updater_SuperGangsta[325223]:   fomoframe[line_name] = float('nan')
+Dec 03 01:01:52 the-rain-maker dstock_updater_SuperGangsta[325223]: INFO:root:Funding new account: runs/fomo--2021-12-03--010138--2021-08-23--TESTFUNDS0830--trader-0850/account.json
+Dec 03 01:01:54 the-rain-maker dstock_updater_SuperGangsta[325223]: INFO:root:Dowloading History and Prices of TESTFUNDS1330 for 101 days
+Dec 03 01:02:06 the-rain-maker dstock_updater_SuperGangsta[325223]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $97882.056599 on 2021-12-02 00:00:00
+Dec 03 01:02:06 the-rain-maker dstock_updater_SuperGangsta[325223]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Dec 03 01:02:06 the-rain-maker dstock_updater_SuperGangsta[325223]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Dec 03 01:02:06 the-rain-maker dstock_updater_SuperGangsta[325223]:   fomoframe[line_name] = float('nan')
