@@ -1,0 +1,229 @@
+-- Logs begin at Tue 2021-07-06 17:17:01 EDT, end at Sun 2022-01-02 01:02:01 EST. --
+Jan 01 01:01:31 the-rain-maker systemd[1]: Starting dstock SuperGangsta updater service...
+Jan 01 01:01:31 the-rain-maker dstock_updater_SuperGangsta[4066184]: updating application
+Jan 01 01:01:31 the-rain-maker dstock_updater_SuperGangsta[4066184]: + sudo -u dkarimi ./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 01 01:01:31 the-rain-maker sudo[4066190]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; COMMAND=./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 01 01:01:31 the-rain-maker sudo[4066190]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 01 01:01:31 the-rain-maker dstock_updater_SuperGangsta[4066191]: Clearing Dir: runs
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066191]: Clearing Dir: opentuner.db
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066191]: Clearing Dir: download_cache
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066191]: !!!
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066191]: !!! It is now time to update dstock
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066191]: !!!
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066191]: + git status
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066208]: On branch release
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066208]: Your branch is up to date with 'origin/release'.
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066208]: nothing to commit, working tree clean
+Jan 01 01:01:32 the-rain-maker dstock_updater_SuperGangsta[4066191]: + git pull
+Jan 01 01:01:34 the-rain-maker dstock_updater_SuperGangsta[4066215]: Already up to date.
+Jan 01 01:01:34 the-rain-maker dstock_updater_SuperGangsta[4066191]: + set +x
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pandas in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (1.3.3)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pyyaml in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (5.4.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: prettytable in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (2.2.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: yfinance in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (0.1.63)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: matplotlib in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (3.4.3)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: alpaca-trade-api in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 6)) (1.3.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pandas_datareader in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (0.10.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: gspread in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 8)) (4.0.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: google-api-python-client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 9)) (2.21.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: oauth2client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 10)) (4.1.3)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: wheel in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 11)) (0.37.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: numpy>=1.17.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (1.21.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: python-dateutil>=2.7.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2.8.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pytz>=2017.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2021.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: wcwidth in ./dstock_venv/lib/python3.8/site-packages (from prettytable->-r requirements.txt (line 3)) (0.2.5)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: lxml>=4.5.1 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (4.6.3)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: multitasking>=0.0.7 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (0.0.9)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: requests>=2.20 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (2.26.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pillow>=6.2.0 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (8.3.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: cycler>=0.10 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (0.10.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: kiwisolver>=1.0.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (1.3.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pyparsing>=2.2.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (2.4.7)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: websockets<10,>=8.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (9.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: aiohttp==3.7.4 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (3.7.4)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: urllib3<2,>1.24 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.26.6)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: websocket-client<2,>=0.56.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.2.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: msgpack==1.0.2 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.0.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: google-auth-oauthlib>=0.4.1 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (0.4.6)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: google-auth>=1.12.0 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (2.1.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: google-api-core<3.0.0dev,>=1.21.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (2.0.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: google-auth-httplib2>=0.1.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.1.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: uritemplate<4dev,>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (3.0.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: httplib2<1dev,>=0.15.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.19.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pyasn1>=0.1.7 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.4.8)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: rsa>=3.1.4 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (4.7.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: six>=1.6.1 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (1.16.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: pyasn1-modules>=0.0.5 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.2.8)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: idna<4,>=2.5; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (3.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: certifi>=2017.4.17 in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2021.5.30)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: charset-normalizer~=2.0.0; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2.0.5)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: chardet<4.0,>=2.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.4)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: attrs>=17.3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (21.2.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: typing-extensions>=3.6.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.10.0.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: async-timeout<4.0,>=3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: multidict<7.0,>=4.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (5.1.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: yarl<2.0,>=1.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (1.6.3)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: requests-oauthlib>=0.7.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (1.3.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: cachetools<5.0,>=2.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (4.2.2)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: setuptools>=40.3.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (44.0.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: protobuf>=3.12.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (3.18.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: googleapis-common-protos<2.0dev,>=1.6.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (1.53.0)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066216]: Requirement already satisfied: oauthlib>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (3.1.1)
+Jan 01 01:01:36 the-rain-maker dstock_updater_SuperGangsta[4066191]: + ./generate_daily_report.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 01 01:01:37 the-rain-maker dstock_updater_SuperGangsta[4066231]: generating report:
+Jan 01 01:01:37 the-rain-maker dstock_updater_SuperGangsta[4066231]: + ./daily_report --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --start-date 2021-08-23 --end-date 2021-12-31 --output-dir runs/daily_report_output_2021-12-31 --which-source yahoo --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --jitter 100 --num-randos 100 --super-set-name SuperGangsta
+Jan 01 01:01:42 the-rain-maker dstock_updater_SuperGangsta[4066247]: INFO:root:Fomo is using 100 randos
+Jan 01 01:01:42 the-rain-maker dstock_updater_SuperGangsta[4066247]: INFO:root:Dowloading History and Prices of TESTFUNDS0830 for 130 days
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: /home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/pandas_datareader/base.py:272: SymbolWarning: Failed to read symbol: 'AAPL', replacing with NaN.
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:   warnings.warn(msg.format(sym), SymbolWarning)
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $104524.699376 on 2021-12-31 00:00:00
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:   fomoframe[line_name] = float('nan')
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: INFO:root:Funding new account: runs/fomo--2022-01-01--010142--2021-08-23--TESTFUNDS0830--trader-0850/account.json
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: Traceback (most recent call last):
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:   File "./daily_report.py", line 208, in <module>
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:     main(**vars(args))
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:   File "./daily_report.py", line 142, in main
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:     fomo_results = fomo_graph.main(
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:   File "/home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py", line 1041, in main
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:     _simulate_account(
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:   File "/home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py", line 383, in _simulate_account
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:     _simulate_palloc_web_account(
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:   File "/home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py", line 296, in _simulate_palloc_web_account
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]:     raise Exception("Trader not using same prices\n{}\nvs.\n{}".format(
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: Exception: Trader not using same prices
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: {'AAPL': nan, 'AIG': 54.06999969482422, 'FB': 359.44000244140625, 'GOOG': 2779.969970703125, 'IBM': 133.47991943359375, 'BAC': 40.630001068115234, 'WM': 153.25999450683594}
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: vs.
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066247]: {'AIG': 54.06999969482422, 'FB': 359.44000244140625, 'GOOG': 2779.969970703125, 'IBM': 133.47991943359375, 'BAC': 40.630001068115234, 'WM': 153.25999450683594, 'AAPL': nan}
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066231]: + set +x
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066231]: Warning: Not attempting to curate daily report as runs/daily_report_output_2021-12-31/index.html does not exist
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066191]: + set +x
+Jan 01 01:01:49 the-rain-maker sudo[4066190]: pam_unix(sudo:session): session closed for user dkarimi
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066184]: + set +x
+Jan 01 01:01:49 the-rain-maker sudo[4066312]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; ENV=SERVICE_RESULT=success EXIT_CODE=exited EXIT_STATUS=0 ; COMMAND=/home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+Jan 01 01:01:49 the-rain-maker sudo[4066312]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066313]: generating post service report for : dstock_updater_SuperGangsta
+Jan 01 01:01:49 the-rain-maker dstock_updater_SuperGangsta[4066313]: Generating email content ...
+Jan 01 01:01:51 the-rain-maker dstock_updater_SuperGangsta[4066313]: Sending email about website dstock/reports/SuperGangsta/2022-01-01/post_service/010149_dstock_updater_SuperGangsta ...
+Jan 01 01:01:53 the-rain-maker sudo[4066312]: pam_unix(sudo:session): session closed for user dkarimi
+Jan 01 01:01:53 the-rain-maker systemd[1]: dstock_updater_SuperGangsta.service: Succeeded.
+Jan 01 01:01:53 the-rain-maker systemd[1]: Finished dstock SuperGangsta updater service.
+Jan 02 01:01:05 the-rain-maker systemd[1]: Starting dstock SuperGangsta updater service...
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694784]: updating application
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694784]: + sudo -u dkarimi ./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 02 01:01:05 the-rain-maker sudo[694790]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; COMMAND=./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 02 01:01:05 the-rain-maker sudo[694790]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: Clearing Dir: runs
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: Clearing Dir: opentuner.db
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: Clearing Dir: download_cache
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: !!!
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: !!! It is now time to update dstock
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: !!!
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: + git status
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694798]: On branch release
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694798]: Your branch is up to date with 'origin/release'.
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694798]: nothing to commit, working tree clean
+Jan 02 01:01:05 the-rain-maker dstock_updater_SuperGangsta[694791]: + git pull
+Jan 02 01:01:06 the-rain-maker dstock_updater_SuperGangsta[694805]: Already up to date.
+Jan 02 01:01:06 the-rain-maker dstock_updater_SuperGangsta[694791]: + set +x
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pandas in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (1.3.3)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pyyaml in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (5.4.1)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: prettytable in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (2.2.0)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: yfinance in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (0.1.63)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: matplotlib in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (3.4.3)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: alpaca-trade-api in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 6)) (1.3.0)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pandas_datareader in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (0.10.0)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: gspread in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 8)) (4.0.1)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: google-api-python-client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 9)) (2.21.0)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: oauth2client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 10)) (4.1.3)
+Jan 02 01:01:08 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: wheel in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 11)) (0.37.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pytz>=2017.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2021.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: numpy>=1.17.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (1.21.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: python-dateutil>=2.7.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2.8.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: wcwidth in ./dstock_venv/lib/python3.8/site-packages (from prettytable->-r requirements.txt (line 3)) (0.2.5)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: lxml>=4.5.1 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (4.6.3)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: multitasking>=0.0.7 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (0.0.9)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: requests>=2.20 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (2.26.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pyparsing>=2.2.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (2.4.7)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pillow>=6.2.0 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (8.3.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: kiwisolver>=1.0.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (1.3.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: cycler>=0.10 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (0.10.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: websocket-client<2,>=0.56.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.2.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: msgpack==1.0.2 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.0.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: urllib3<2,>1.24 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.26.6)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: aiohttp==3.7.4 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (3.7.4)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: websockets<10,>=8.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (9.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: google-auth-oauthlib>=0.4.1 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (0.4.6)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: google-auth>=1.12.0 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (2.1.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: google-api-core<3.0.0dev,>=1.21.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (2.0.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: httplib2<1dev,>=0.15.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.19.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: uritemplate<4dev,>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (3.0.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: google-auth-httplib2>=0.1.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.1.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pyasn1>=0.1.7 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.4.8)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: rsa>=3.1.4 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (4.7.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: six>=1.6.1 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (1.16.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: pyasn1-modules>=0.0.5 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.2.8)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: idna<4,>=2.5; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (3.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: certifi>=2017.4.17 in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2021.5.30)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: charset-normalizer~=2.0.0; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2.0.5)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: attrs>=17.3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (21.2.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: typing-extensions>=3.6.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.10.0.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: multidict<7.0,>=4.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (5.1.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: chardet<4.0,>=2.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.4)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: yarl<2.0,>=1.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (1.6.3)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: async-timeout<4.0,>=3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: requests-oauthlib>=0.7.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (1.3.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: cachetools<5.0,>=2.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (4.2.2)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: setuptools>=40.3.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (44.0.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: protobuf>=3.12.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (3.18.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: googleapis-common-protos<2.0dev,>=1.6.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (1.53.0)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694806]: Requirement already satisfied: oauthlib>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (3.1.1)
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694791]: + ./generate_daily_report.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694811]: generating report:
+Jan 02 01:01:09 the-rain-maker dstock_updater_SuperGangsta[694811]: + ./daily_report --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --start-date 2021-08-23 --end-date 2022-01-01 --output-dir runs/daily_report_output_2022-01-01 --which-source yahoo --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --jitter 100 --num-randos 100 --super-set-name SuperGangsta
+Jan 02 01:01:12 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Fomo is using 100 randos
+Jan 02 01:01:12 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Dowloading History and Prices of TESTFUNDS0830 for 131 days
+Jan 02 01:01:25 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $104524.629166 on 2022-01-01 00:00:00
+Jan 02 01:01:25 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 02 01:01:25 the-rain-maker dstock_updater_SuperGangsta[694827]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 02 01:01:25 the-rain-maker dstock_updater_SuperGangsta[694827]:   fomoframe[line_name] = float('nan')
+Jan 02 01:01:25 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Funding new account: runs/fomo--2022-01-02--010112--2021-08-23--TESTFUNDS0830--trader-0850/account.json
+Jan 02 01:01:29 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Dowloading History and Prices of TESTFUNDS1330 for 131 days
+Jan 02 01:01:42 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $104665.793900 on 2022-01-01 00:00:00
+Jan 02 01:01:42 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 02 01:01:42 the-rain-maker dstock_updater_SuperGangsta[694827]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 02 01:01:42 the-rain-maker dstock_updater_SuperGangsta[694827]:   fomoframe[line_name] = float('nan')
+Jan 02 01:01:42 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Funding new account: runs/fomo--2022-01-02--010112--2021-08-23--TESTFUNDS1330--trader-0850/account.json
+Jan 02 01:01:48 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Dowloading History and Prices of TESTFUNDS1550 for 131 days
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: /home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/pandas_datareader/base.py:272: SymbolWarning: Failed to read symbol: 'FB', replacing with NaN.
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:   warnings.warn(msg.format(sym), SymbolWarning)
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $104436.865779 on 2022-01-01 00:00:00
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:   fomoframe[line_name] = float('nan')
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: INFO:root:Funding new account: runs/fomo--2022-01-02--010112--2021-08-23--TESTFUNDS1550--trader-0850/account.json
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: Traceback (most recent call last):
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:   File "./daily_report.py", line 208, in <module>
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:     main(**vars(args))
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:   File "./daily_report.py", line 142, in main
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:     fomo_results = fomo_graph.main(
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:   File "/home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py", line 1041, in main
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:     _simulate_account(
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:   File "/home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py", line 383, in _simulate_account
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:     _simulate_palloc_web_account(
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:   File "/home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py", line 296, in _simulate_palloc_web_account
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]:     raise Exception("Trader not using same prices\n{}\nvs.\n{}".format(
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: Exception: Trader not using same prices
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: {'AAPL': 148.30999755859375, 'AIG': 54.06999969482422, 'FB': nan, 'GOOG': 2779.969970703125, 'IBM': 133.47991943359375, 'BAC': 40.630001068115234, 'WM': 153.25999450683594}
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: vs.
+Jan 02 01:02:00 the-rain-maker dstock_updater_SuperGangsta[694827]: {'AAPL': 148.30999755859375, 'AIG': 54.06999969482422, 'GOOG': 2779.969970703125, 'IBM': 133.47991943359375, 'BAC': 40.630001068115234, 'WM': 153.25999450683594, 'FB': nan}
+Jan 02 01:02:01 the-rain-maker dstock_updater_SuperGangsta[694811]: + set +x
+Jan 02 01:02:01 the-rain-maker dstock_updater_SuperGangsta[694811]: Warning: Not attempting to curate daily report as runs/daily_report_output_2022-01-01/index.html does not exist
+Jan 02 01:02:01 the-rain-maker dstock_updater_SuperGangsta[694791]: + set +x
+Jan 02 01:02:01 the-rain-maker sudo[694790]: pam_unix(sudo:session): session closed for user dkarimi
+Jan 02 01:02:01 the-rain-maker dstock_updater_SuperGangsta[694784]: + set +x
+Jan 02 01:02:01 the-rain-maker sudo[694987]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; ENV=SERVICE_RESULT=success EXIT_CODE=exited EXIT_STATUS=0 ; COMMAND=/home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+Jan 02 01:02:01 the-rain-maker sudo[694987]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 02 01:02:01 the-rain-maker dstock_updater_SuperGangsta[694988]: generating post service report for : dstock_updater_SuperGangsta
+Jan 02 01:02:01 the-rain-maker dstock_updater_SuperGangsta[694988]: Generating email content ...
