@@ -1,0 +1,68 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-11-27/post_service/090333_trader_SuperArbys_WAFFELBIT6/
+SERVICE_NAME    = trader_SuperArbys_WAFFELBIT6
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  09:03:33 up 213 days, 12:58,  1 user,  load average: 5.91, 8.97, 10.08
+● trader_SuperArbys_WAFFELBIT6.service - dstock SuperArbys palloc WAFFELBIT6 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_WAFFELBIT6.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● trader_SuperArbys_WAFFELBIT6.timer
+    Process: 1721771 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio WAFFELBIT6 --which-api alpaca --api-key PKMMUROW242T85K26J43 --secret-key 3G9AEdaZ7QqxacNWTOG1l1pzGDHeeS4AiuVvRg5S --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=1/FAILURE)
+   Main PID: 1721771 (code=exited, status=1/FAILURE); Control PID: 1721826 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 3.1M
+     CGroup: /system.slice/trader_SuperArbys_WAFFELBIT6.service
+             ├─1721826 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio WAFFELBIT6 --service-name trader_SuperArbys_WAFFELBIT6 --send-success-emails
+             └─1721842 systemctl status trader_SuperArbys_WAFFELBIT6 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Sat 2021-11-27 09:03:33 EST. --
+Nov 27 09:03:31 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc WAFFELBIT6 trader service...
+Nov 27 09:03:32 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]: INFO:root:Logging into Alpaca
+Nov 27 09:03:32 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]: INFO:root:Canceling existing orders
+Nov 27 09:03:32 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]: INFO:root:Requesting current orders
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]: INFO:root:   + buy 203.03 shares of H @ $ 78.23  = $ 15883.42
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]: {
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     "account_value": 100000.0,
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     "goal_allocation": {
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         "H": 0.15883417584100826,
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         "ESS": 0.057505233601314175,
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         "LMT": 0.20818440947205696,
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         "AMG": 0.03513173400027241,
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         "NSC": 0.09862732967723019,
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         "BAX": 0.44171711740811803
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     },
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     "requested_recommendation_time": null,
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     "actual_recommendation_time": "2021-11-27 08:03:34",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     "cur_time": "2021-11-27",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     "recommendation_run_end_date": "2021-11-26 00:00:00",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:     "orders": [
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         [
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "buy",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "H",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             203.03489709829987
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         ],
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         [
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "buy",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "ESS",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             16.877553416294905
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         ],
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         [
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "buy",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "LMT",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             60.760703966377726
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         ],
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         [
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "buy",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "AMG",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             21.0
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         ],
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         [
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "buy",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "NSC",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             36.558417970197944
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         ],
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         [
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "buy",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             "BAX",
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:             578.769785115304
+Nov 27 09:03:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[1721785]:         ]

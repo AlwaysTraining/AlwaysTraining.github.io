@@ -1,0 +1,68 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-11-29/post_service/090333_trader_SuperArbys_GASCOACH4/
+SERVICE_NAME    = trader_SuperArbys_GASCOACH4
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  09:03:33 up 215 days, 12:58,  1 user,  load average: 17.57, 14.84, 12.05
+● trader_SuperArbys_GASCOACH4.service - dstock SuperArbys palloc GASCOACH4 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_GASCOACH4.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● trader_SuperArbys_GASCOACH4.timer
+    Process: 2932949 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio GASCOACH4 --which-api alpaca --api-key PK2BMZ8IPKXSLL0ALX06 --secret-key PFnsoJGZqKhXrTKlvoPmf5Id3eWnof2RPDxYzbE7 --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=1/FAILURE)
+   Main PID: 2932949 (code=exited, status=1/FAILURE); Control PID: 2932991 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 4.2M
+     CGroup: /system.slice/trader_SuperArbys_GASCOACH4.service
+             ├─2932991 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio GASCOACH4 --service-name trader_SuperArbys_GASCOACH4 --send-success-emails
+             └─2933014 systemctl status trader_SuperArbys_GASCOACH4 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Mon 2021-11-29 09:03:33 EST. --
+Nov 29 09:03:31 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc GASCOACH4 trader service...
+Nov 29 09:03:32 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]: INFO:root:Logging into Alpaca
+Nov 29 09:03:32 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]: INFO:root:Canceling existing orders
+Nov 29 09:03:32 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]: INFO:root:Requesting current orders
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]: INFO:root:   + buy 525.48 shares of VLO @ $ 67.96  = $ 35711.33
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]: {
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "account_value": 100000.0,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "goal_allocation": {
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "VLO": 0.35711330820938547,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "XOM": 0.08378199142787866,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "SLB": 0.5159276410752254,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "TPR": 0.043177059287510325
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     },
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "requested_recommendation_time": null,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "actual_recommendation_time": "2021-11-29 08:02:34",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "cur_time": "2021-11-29",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "recommendation_run_end_date": "2021-11-26 00:00:00",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "orders": [
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         [
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "buy",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "VLO",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             525.4757210123603
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         ],
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         [
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "buy",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "XOM",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             136.69766682982544
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         ],
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         [
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "buy",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "SLB",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             1736.2530708396434
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         ],
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         [
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "buy",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             "TPR",
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:             103.28214328429614
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         ]
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     ],
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "prices": {
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "VLO": 67.96,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "XOM": 61.29,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "SLB": 29.715,
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:         "TPR": 41.805
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     },
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     "time_lane": null
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]: }
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]: Traceback (most recent call last):
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:   File "/home/dkarimi/work/supersets/SuperArbys/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 208, in _one_request
+Nov 29 09:03:33 the-rain-maker trader_SuperArbys_GASCOACH4[2932956]:     resp.raise_for_status()

@@ -1,0 +1,28 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-12-11/post_service/090114_trader_SuperArbys_GASCOACH4/
+SERVICE_NAME    = trader_SuperArbys_GASCOACH4
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  09:01:16 up 227 days, 12:56,  1 user,  load average: 10.63, 7.16, 5.94
+● trader_SuperArbys_GASCOACH4.service - dstock SuperArbys palloc GASCOACH4 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_GASCOACH4.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperArbys_GASCOACH4.timer
+    Process: 334879 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio GASCOACH4 --which-api alpaca --api-key PK2BMZ8IPKXSLL0ALX06 --secret-key PFnsoJGZqKhXrTKlvoPmf5Id3eWnof2RPDxYzbE7 --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 334879 (code=exited, status=0/SUCCESS); Control PID: 334913 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 11.6M
+     CGroup: /system.slice/trader_SuperArbys_GASCOACH4.service
+             ├─334913 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio GASCOACH4 --service-name trader_SuperArbys_GASCOACH4 --send-success-emails
+             └─334928 systemctl status trader_SuperArbys_GASCOACH4 -n 0
+-- Logs begin at Tue 2021-07-06 17:17:01 EDT, end at Sat 2021-12-11 09:01:14 EST. --
+Dec 11 09:01:12 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc GASCOACH4 trader service...
+Dec 11 09:01:13 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: INFO:root:Logging into Alpaca
+Dec 11 09:01:13 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: INFO:root:Canceling existing orders
+Dec 11 09:01:13 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: INFO:root:Requesting current orders
+Dec 11 09:01:14 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: INFO:root:   - sell 0.04 shares of VLO @ $ 70.86  = $ 2.52
+Dec 11 09:01:14 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: INFO:root:   - sell 56.23 shares of SLB @ $ 31.01  = $ 1743.73
+Dec 11 09:01:14 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: INFO:root:   + buy 5.98 shares of XOM @ $ 63.0  = $ 376.52
+Dec 11 09:01:14 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: INFO:root:   + buy 31.73 shares of TPR @ $ 43.24  = $ 1372.16
+Dec 11 09:01:14 the-rain-maker trader_SuperArbys_GASCOACH4[334893]: {
+Dec 11 09:01:14 the-rain-maker trader_SuperArbys_GASCOACH4[334893]:     "account_value": 107148.96770580225,

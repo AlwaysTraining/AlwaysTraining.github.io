@@ -1,0 +1,28 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-12-15/post_service/090427_trader_SuperArbys_APOCAHOUSE3/
+SERVICE_NAME    = trader_SuperArbys_APOCAHOUSE3
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  09:04:28 up 231 days, 12:59,  1 user,  load average: 3.49, 4.53, 5.75
+● trader_SuperArbys_APOCAHOUSE3.service - dstock SuperArbys palloc APOCAHOUSE3 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_APOCAHOUSE3.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperArbys_APOCAHOUSE3.timer
+    Process: 818448 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio APOCAHOUSE3 --which-api alpaca --api-key PK6MC6ITY58HQURHY3ZM --secret-key UZfvuLt1qDfFNPCkKinCqiqWTMljbk955PLPvVAo --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 818448 (code=exited, status=0/SUCCESS); Control PID: 818484 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 5.3M
+     CGroup: /system.slice/trader_SuperArbys_APOCAHOUSE3.service
+             ├─818484 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio APOCAHOUSE3 --service-name trader_SuperArbys_APOCAHOUSE3 --send-success-emails
+             └─818499 systemctl status trader_SuperArbys_APOCAHOUSE3 -n 0
+-- Logs begin at Tue 2021-07-06 17:17:01 EDT, end at Wed 2021-12-15 09:04:27 EST. --
+Dec 15 09:04:26 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc APOCAHOUSE3 trader service...
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]: INFO:root:Logging into Alpaca
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]: INFO:root:Canceling existing orders
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]: INFO:root:Requesting current orders
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]: INFO:root:   - sell 6.45 shares of CVS @ $ 98.78  = $ 636.92
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]: INFO:root:   - sell 6.86 shares of KSS @ $ 49.5  = $ 339.77
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]: INFO:root:   + buy 18.46 shares of PHM @ $ 53.86  = $ 994.33
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]: {
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]:     "account_value": 104979.61318877216,
+Dec 15 09:04:27 the-rain-maker trader_SuperArbys_APOCAHOUSE3[818456]:     "goal_allocation": {

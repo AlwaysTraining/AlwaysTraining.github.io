@@ -1,0 +1,28 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-12-19/post_service/090233_trader_SuperArbys_WAFFELBIT6/
+SERVICE_NAME    = trader_SuperArbys_WAFFELBIT6
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  09:02:33 up 235 days, 12:57,  1 user,  load average: 1.00, 2.15, 3.33
+● trader_SuperArbys_WAFFELBIT6.service - dstock SuperArbys palloc WAFFELBIT6 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_WAFFELBIT6.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperArbys_WAFFELBIT6.timer
+    Process: 2165317 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio WAFFELBIT6 --which-api alpaca --api-key PKMMUROW242T85K26J43 --secret-key 3G9AEdaZ7QqxacNWTOG1l1pzGDHeeS4AiuVvRg5S --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 2165317 (code=exited, status=0/SUCCESS); Control PID: 2165333 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 2.8M
+     CGroup: /system.slice/trader_SuperArbys_WAFFELBIT6.service
+             ├─2165333 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio WAFFELBIT6 --service-name trader_SuperArbys_WAFFELBIT6 --send-success-emails
+             └─2165348 systemctl status trader_SuperArbys_WAFFELBIT6 -n 0
+-- Logs begin at Tue 2021-07-06 17:17:01 EDT, end at Sun 2021-12-19 09:02:33 EST. --
+Dec 19 09:02:31 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc WAFFELBIT6 trader service...
+Dec 19 09:02:31 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:Logging into Alpaca
+Dec 19 09:02:31 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:Canceling existing orders
+Dec 19 09:02:32 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:Requesting current orders
+Dec 19 09:02:32 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:There are orders, waited 1 times for them to go...
+Dec 19 09:02:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:Requesting current orders
+Dec 19 09:02:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:   - sell 22.47 shares of H @ $ 83.59  = $ 1878.63
+Dec 19 09:02:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:   - sell 6.43 shares of LMT @ $ 343.93  = $ 2211.48
+Dec 19 09:02:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:   - sell 23.73 shares of BAX @ $ 83.66  = $ 1985.42
+Dec 19 09:02:33 the-rain-maker trader_SuperArbys_WAFFELBIT6[2165324]: INFO:root:   + buy 3.35 shares of ESS @ $ 341.82  = $ 1144.98

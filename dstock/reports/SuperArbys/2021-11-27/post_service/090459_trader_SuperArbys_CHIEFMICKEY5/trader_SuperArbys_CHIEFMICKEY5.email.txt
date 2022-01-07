@@ -1,0 +1,68 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-11-27/post_service/090459_trader_SuperArbys_CHIEFMICKEY5/
+SERVICE_NAME    = trader_SuperArbys_CHIEFMICKEY5
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  09:04:59 up 213 days, 12:59,  1 user,  load average: 6.87, 8.56, 9.84
+● trader_SuperArbys_CHIEFMICKEY5.service - dstock SuperArbys palloc CHIEFMICKEY5 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_CHIEFMICKEY5.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● trader_SuperArbys_CHIEFMICKEY5.timer
+    Process: 1722609 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio CHIEFMICKEY5 --which-api alpaca --api-key PKOSEP1BO8898MOJJH9J --secret-key QyFanMuf5SPnl6U5syugEphU7CHm4ckMjcH7owLD --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=1/FAILURE)
+   Main PID: 1722609 (code=exited, status=1/FAILURE); Control PID: 1722644 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 2.7M
+     CGroup: /system.slice/trader_SuperArbys_CHIEFMICKEY5.service
+             ├─1722644 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio CHIEFMICKEY5 --service-name trader_SuperArbys_CHIEFMICKEY5 --send-success-emails
+             └─1722659 systemctl status trader_SuperArbys_CHIEFMICKEY5 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Sat 2021-11-27 09:04:59 EST. --
+Nov 27 09:04:57 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc CHIEFMICKEY5 trader service...
+Nov 27 09:04:58 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]: INFO:root:Logging into Alpaca
+Nov 27 09:04:58 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]: INFO:root:Canceling existing orders
+Nov 27 09:04:58 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]: INFO:root:Requesting current orders
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]: INFO:root:   + buy 149.82 shares of MHK @ $ 175.22  = $ 26251.0
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]: {
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "account_value": 100000.0,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "goal_allocation": {
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "MHK": 0.26251004539316963,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "DIS": 0.3296877328149644,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "PBCT": 0.15310953260911872,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "HST": 0.22667175618588012,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "CF": 0.028020932996867188
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     },
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "requested_recommendation_time": null,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "actual_recommendation_time": "2021-11-27 08:30:35",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "cur_time": "2021-11-27",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "recommendation_run_end_date": "2021-11-26 00:00:00",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "orders": [
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         [
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "buy",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "MHK",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             149.8173724460678
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         ],
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         [
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "buy",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "DIS",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             222.44632615882867
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         ],
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         [
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "buy",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "PBCT",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             859.0
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         ],
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         [
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "buy",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "HST",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             1380.0414003044139
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         ],
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         [
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "buy",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             "CF",
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:             44.60506208213945
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         ]
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     ],
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:     "prices": {
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "MHK": 175.22,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "DIS": 148.21,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "PBCT": 17.82,
+Nov 27 09:04:59 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[1722616]:         "HST": 16.425,

@@ -1,0 +1,28 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-12-01/post_service/090633_trader_SuperArbys_APOCAHOUSE3/
+SERVICE_NAME    = trader_SuperArbys_APOCAHOUSE3
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  09:06:34 up 217 days, 13:01,  1 user,  load average: 8.51, 7.16, 7.56
+● trader_SuperArbys_APOCAHOUSE3.service - dstock SuperArbys palloc APOCAHOUSE3 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_APOCAHOUSE3.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperArbys_APOCAHOUSE3.timer
+    Process: 15124 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio APOCAHOUSE3 --which-api alpaca --api-key PK6MC6ITY58HQURHY3ZM --secret-key UZfvuLt1qDfFNPCkKinCqiqWTMljbk955PLPvVAo --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 15124 (code=exited, status=0/SUCCESS); Control PID: 15153 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 11.8M
+     CGroup: /system.slice/trader_SuperArbys_APOCAHOUSE3.service
+             ├─15153 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio APOCAHOUSE3 --service-name trader_SuperArbys_APOCAHOUSE3 --send-success-emails
+             └─15168 systemctl status trader_SuperArbys_APOCAHOUSE3 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Wed 2021-12-01 09:06:33 EST. --
+Dec 01 09:06:31 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc APOCAHOUSE3 trader service...
+Dec 01 09:06:32 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]: INFO:root:Logging into Alpaca
+Dec 01 09:06:32 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]: INFO:root:Canceling existing orders
+Dec 01 09:06:32 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]: INFO:root:Requesting current orders
+Dec 01 09:06:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]: {
+Dec 01 09:06:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]:     "account_value": 0.0,
+Dec 01 09:06:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]:     "goal_allocation": {
+Dec 01 09:06:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]:         "PHM": 0.3284826903367815,
+Dec 01 09:06:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]:         "CVS": 0.321597086149826,
+Dec 01 09:06:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[15133]:         "KSS": 0.3499202235133924

@@ -1,0 +1,68 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2021-11-30/post_service/090233_trader_SuperArbys_APOCAHOUSE3/
+SERVICE_NAME    = trader_SuperArbys_APOCAHOUSE3
+SERVICE_RESULT  = exit-code
+EXIT_CODE       = exited
+EXIT_STATUS     = 1
+UPTIME          =  09:02:33 up 216 days, 12:57,  1 user,  load average: 9.10, 7.88, 7.16
+● trader_SuperArbys_APOCAHOUSE3.service - dstock SuperArbys palloc APOCAHOUSE3 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_APOCAHOUSE3.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post) (Result: exit-code)
+TriggeredBy: ● trader_SuperArbys_APOCAHOUSE3.timer
+    Process: 3052093 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio APOCAHOUSE3 --which-api alpaca --api-key PK6MC6ITY58HQURHY3ZM --secret-key UZfvuLt1qDfFNPCkKinCqiqWTMljbk955PLPvVAo --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=1/FAILURE)
+   Main PID: 3052093 (code=exited, status=1/FAILURE); Control PID: 3052109 (generate_post_s)
+      Tasks: 2 (limit: 9017)
+     Memory: 3.5M
+     CGroup: /system.slice/trader_SuperArbys_APOCAHOUSE3.service
+             ├─3052109 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio APOCAHOUSE3 --service-name trader_SuperArbys_APOCAHOUSE3 --send-success-emails
+             └─3052124 systemctl status trader_SuperArbys_APOCAHOUSE3 -n 0
+-- Logs begin at Sun 2021-07-04 10:13:09 EDT, end at Tue 2021-11-30 09:02:33 EST. --
+Nov 30 09:02:31 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc APOCAHOUSE3 trader service...
+Nov 30 09:02:32 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: INFO:root:Logging into Alpaca
+Nov 30 09:02:32 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: INFO:root:Canceling existing orders
+Nov 30 09:02:32 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: INFO:root:Requesting current orders
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: INFO:root:   + buy 640.8 shares of PHM @ $ 51.54  = $ 33026.76
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: {
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "account_value": 100000.0,
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "goal_allocation": {
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         "PHM": 0.33026757685219815,
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         "CVS": 0.3231090809092824,
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         "KSS": 0.34662334223851937
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     },
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "requested_recommendation_time": null,
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "actual_recommendation_time": "2021-11-30 08:02:41",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "cur_time": "2021-11-30",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "recommendation_run_end_date": "2021-11-29 00:00:00",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "orders": [
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         [
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             "buy",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             "PHM",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             640.7986030267754
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         ],
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         [
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             "buy",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             "CVS",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             351.12921104107807
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         ],
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         [
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             "buy",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             "KSS",
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:             650.0812078019505
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         ]
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     ],
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "prices": {
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         "PHM": 51.54,
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         "CVS": 92.02,
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:         "KSS": 53.32
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     },
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     "time_lane": null
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: }
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: Traceback (most recent call last):
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:   File "/home/dkarimi/work/supersets/SuperArbys/dstock_venv/lib/python3.8/site-packages/alpaca_trade_api/rest.py", line 208, in _one_request
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     resp.raise_for_status()
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:   File "/home/dkarimi/work/supersets/SuperArbys/dstock_venv/lib/python3.8/site-packages/requests/models.py", line 953, in raise_for_status
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     raise HTTPError(http_error_msg, response=self)
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://paper-api.alpaca.markets/v2/orders
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: During handling of the above exception, another exception occurred:
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]: Traceback (most recent call last):
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:   File "./palloc_trader.py", line 746, in <module>
+Nov 30 09:02:33 the-rain-maker trader_SuperArbys_APOCAHOUSE3[3052100]:     main(**vars(args))
