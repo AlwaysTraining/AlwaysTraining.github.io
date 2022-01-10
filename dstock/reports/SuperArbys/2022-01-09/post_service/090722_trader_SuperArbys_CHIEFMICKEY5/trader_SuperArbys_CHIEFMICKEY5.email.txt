@@ -1,0 +1,28 @@
+https://alwaystraining.github.io/dstock/reports/SuperArbys/2022-01-09/post_service/090722_trader_SuperArbys_CHIEFMICKEY5/
+SERVICE_NAME    = trader_SuperArbys_CHIEFMICKEY5
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  09:07:22 up 6 days, 12:29, 11 users,  load average: 7.39, 4.03, 4.26
+● trader_SuperArbys_CHIEFMICKEY5.service - dstock SuperArbys palloc CHIEFMICKEY5 trader service
+     Loaded: loaded (/etc/systemd/system/trader_SuperArbys_CHIEFMICKEY5.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● trader_SuperArbys_CHIEFMICKEY5.timer
+    Process: 888351 ExecStart=/home/dkarimi/work/supersets/SuperArbys/palloc_trader --allocation-source palloc_sqlite --portfolio CHIEFMICKEY5 --which-api alpaca --api-key PKOSEP1BO8898MOJJH9J --secret-key QyFanMuf5SPnl6U5syugEphU7CHm4ckMjcH7owLD --sqlite-file /home/dkarimi/work/supersets/SuperArbys/palloc.sqlite --base-url https://paper-api.alpaca.markets (code=exited, status=0/SUCCESS)
+   Main PID: 888351 (code=exited, status=0/SUCCESS); Control PID: 888369 (generate_post_s)
+      Tasks: 2 (limit: 9001)
+     Memory: 1.2M
+     CGroup: /system.slice/trader_SuperArbys_CHIEFMICKEY5.service
+             ├─888369 /bin/bash /home/dkarimi/work/supersets/SuperArbys/generate_post_service_report.sh --super-set-name SuperArbys --portfolio CHIEFMICKEY5 --service-name trader_SuperArbys_CHIEFMICKEY5 --send-success-emails
+             └─888384 systemctl status trader_SuperArbys_CHIEFMICKEY5 -n 0
+-- Logs begin at Sun 2022-01-02 20:30:53 EST, end at Sun 2022-01-09 09:07:22 EST. --
+Jan 09 09:07:19 the-rain-maker systemd[1]: Starting dstock SuperArbys palloc CHIEFMICKEY5 trader service...
+Jan 09 09:07:20 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:Logging into Alpaca
+Jan 09 09:07:20 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:Canceling existing orders
+Jan 09 09:07:20 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:Requesting current orders
+Jan 09 09:07:20 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:There are orders, waited 1 times for them to go...
+Jan 09 09:07:21 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:Requesting current orders
+Jan 09 09:07:22 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:   - sell 463.29 shares of PBCT @ $ 20.38  = $ 9441.85
+Jan 09 09:07:22 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:   - sell 126.48 shares of HST @ $ 18.21  = $ 2303.22
+Jan 09 09:07:22 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:   + buy 29.46 shares of MHK @ $ 176.57  = $ 5201.99
+Jan 09 09:07:22 the-rain-maker trader_SuperArbys_CHIEFMICKEY5[888360]: INFO:root:   + buy 11.11 shares of DIS @ $ 157.83  = $ 1753.94
