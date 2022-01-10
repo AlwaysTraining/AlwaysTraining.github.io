@@ -1,0 +1,1076 @@
+-- Logs begin at Sun 2022-01-02 20:30:53 EST, end at Sun 2022-01-09 01:01:49 EST. --
+Jan 08 01:01:05 the-rain-maker systemd[1]: Starting dstock SuperGangsta updater service...
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371215]: updating application
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371215]: + sudo -u dkarimi ./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 08 01:01:05 the-rain-maker sudo[1371223]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; COMMAND=./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 08 01:01:05 the-rain-maker sudo[1371223]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: Clearing Dir: runs
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: Clearing Dir: opentuner.db
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: Clearing Dir: download_cache
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: !!!
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: !!! It is now time to update dstock
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: !!!
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: + git status
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371237]: On branch release
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371237]: Your branch is up to date with 'origin/release'.
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371237]: nothing to commit, working tree clean
+Jan 08 01:01:05 the-rain-maker dstock_updater_SuperGangsta[1371224]: + git pull
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371240]: From github.com:AlwaysTraining/dstock
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371240]:    a6104d3..f8c4eff  release    -> origin/release
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371317]: Updating a6104d3..f8c4eff
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371317]: Fast-forward
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371317]:  RELEASE_NOTES            |  4 ++++
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371317]:  VERSION                  |  2 +-
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371317]:  dstock_supersets.py      | 54 ++++++++++++++++++++++++++++++++++++++++++++++--
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371317]:  generate_daily_report.sh |  1 +
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371317]:  4 files changed, 58 insertions(+), 3 deletions(-)
+Jan 08 01:01:06 the-rain-maker dstock_updater_SuperGangsta[1371224]: + set +x
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pandas in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (1.3.3)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pyyaml in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (5.4.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: prettytable in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (2.2.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: yfinance in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (0.1.63)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: matplotlib in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (3.4.3)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: alpaca-trade-api in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 6)) (1.3.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pandas_datareader in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (0.10.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: gspread in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 8)) (4.0.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: google-api-python-client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 9)) (2.21.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: oauth2client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 10)) (4.1.3)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: wheel in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 11)) (0.37.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pytz>=2017.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2021.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: python-dateutil>=2.7.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2.8.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: numpy>=1.17.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (1.21.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: wcwidth in ./dstock_venv/lib/python3.8/site-packages (from prettytable->-r requirements.txt (line 3)) (0.2.5)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: lxml>=4.5.1 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (4.6.3)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: multitasking>=0.0.7 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (0.0.9)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: requests>=2.20 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (2.26.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: cycler>=0.10 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (0.10.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pyparsing>=2.2.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (2.4.7)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pillow>=6.2.0 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (8.3.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: kiwisolver>=1.0.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (1.3.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: aiohttp==3.7.4 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (3.7.4)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: websockets<10,>=8.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (9.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: urllib3<2,>1.24 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.26.6)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: msgpack==1.0.2 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.0.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: websocket-client<2,>=0.56.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.2.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: google-auth>=1.12.0 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (2.1.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: google-auth-oauthlib>=0.4.1 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (0.4.6)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: uritemplate<4dev,>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (3.0.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: httplib2<1dev,>=0.15.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.19.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: google-api-core<3.0.0dev,>=1.21.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (2.0.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: google-auth-httplib2>=0.1.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.1.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: six>=1.6.1 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (1.16.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: rsa>=3.1.4 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (4.7.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pyasn1-modules>=0.0.5 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.2.8)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: pyasn1>=0.1.7 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.4.8)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: charset-normalizer~=2.0.0; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2.0.5)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: certifi>=2017.4.17 in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2021.5.30)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: idna<4,>=2.5; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (3.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: chardet<4.0,>=2.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.4)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: multidict<7.0,>=4.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (5.1.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: typing-extensions>=3.6.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.10.0.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: attrs>=17.3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (21.2.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: yarl<2.0,>=1.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (1.6.3)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: async-timeout<4.0,>=3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.1)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: setuptools>=40.3.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (44.0.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: cachetools<5.0,>=2.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (4.2.2)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: requests-oauthlib>=0.7.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (1.3.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: googleapis-common-protos<2.0dev,>=1.6.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (1.53.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: protobuf>=3.12.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (3.18.0)
+Jan 08 01:01:07 the-rain-maker dstock_updater_SuperGangsta[1371320]: Requirement already satisfied: oauthlib>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (3.1.1)
+Jan 08 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1371224]: + ./generate_daily_report.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 08 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1371485]: generating report:
+Jan 08 01:01:08 the-rain-maker dstock_updater_SuperGangsta[1371485]: + ./daily_report --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --start-date 2021-08-23 --end-date 2022-01-07 --output-dir runs/daily_report_output_2022-01-07 --which-source yahoo --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --jitter 100 --num-randos 100 --super-set-name SuperGangsta
+Jan 08 01:01:09 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Fomo is using 100 randos
+Jan 08 01:01:09 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Dowloading History and Prices of TESTFUNDS0830 for 137 days
+Jan 08 01:01:14 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $105765.142350 on 2022-01-07 00:00:00
+Jan 08 01:01:14 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 08 01:01:14 the-rain-maker dstock_updater_SuperGangsta[1371505]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 08 01:01:14 the-rain-maker dstock_updater_SuperGangsta[1371505]:   fomoframe[line_name] = float('nan')
+Jan 08 01:01:14 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Funding new account: runs/fomo--2022-01-08--010109--2021-08-23--TESTFUNDS0830--trader-0850/account.json
+Jan 08 01:01:17 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Dowloading History and Prices of TESTFUNDS1330 for 137 days
+Jan 08 01:01:22 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $106056.308337 on 2022-01-07 00:00:00
+Jan 08 01:01:22 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 08 01:01:22 the-rain-maker dstock_updater_SuperGangsta[1371505]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 08 01:01:22 the-rain-maker dstock_updater_SuperGangsta[1371505]:   fomoframe[line_name] = float('nan')
+Jan 08 01:01:22 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Funding new account: runs/fomo--2022-01-08--010109--2021-08-23--TESTFUNDS1330--trader-0850/account.json
+Jan 08 01:01:26 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Dowloading History and Prices of TESTFUNDS1550 for 137 days
+Jan 08 01:01:31 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $105914.210340 on 2022-01-07 00:00:00
+Jan 08 01:01:31 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 08 01:01:31 the-rain-maker dstock_updater_SuperGangsta[1371505]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 08 01:01:31 the-rain-maker dstock_updater_SuperGangsta[1371505]:   fomoframe[line_name] = float('nan')
+Jan 08 01:01:31 the-rain-maker dstock_updater_SuperGangsta[1371505]: INFO:root:Funding new account: runs/fomo--2022-01-08--010109--2021-08-23--TESTFUNDS1550--trader-0850/account.json
+Jan 08 01:01:34 the-rain-maker dstock_updater_SuperGangsta[1371505]: Written to runs/daily_report_output_2022-01-07/index.html
+Jan 08 01:01:34 the-rain-maker dstock_updater_SuperGangsta[1371485]: + set +x
+Jan 08 01:01:34 the-rain-maker dstock_updater_SuperGangsta[1371485]: updating website dstock/reports/SuperGangsta/2022-01-08/daily ...
+Jan 08 01:01:34 the-rain-maker dstock_updater_SuperGangsta[1371485]: + ./report_curator --input-report-dir runs/daily_report_output_2022-01-07 --target-report-dir dstock/reports/SuperGangsta/2022-01-08/daily --top-index-dir dstock/reports/SuperGangsta --index-generation isolated
+Jan 08 01:01:35 the-rain-maker dstock_updater_SuperGangsta[1374453]: INFO:root:cd report_website && git pull
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374589]: From github.com:AlwaysTraining/AlwaysTraining.github.io
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374589]:    024747045..542ef40ac  master     -> origin/master
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]: Updating 024747045..542ef40ac
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]: Fast-forward
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  146 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  174 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  241 +++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |  132 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  262 +++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |  199 +++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  220 +++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  322 ++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |  132 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  174 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  146 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  160 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  174 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |  132 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  160 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   68 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  146 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  102 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  120 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  111 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   93 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   73 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  103 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |   93 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |   83 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  134 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  134 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  144 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  119 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  134 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  134 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   94 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   94 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  136 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   94 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  136 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  128 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   94 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  134 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  134 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   94 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   94 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  128 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  144 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   94 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  126 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   45 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |   63 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |   55 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |   71 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  110 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  142 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  132 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  130 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../2022-01-06--1--daily_report--CHIEFMICKEY5.svg  | 1575 ++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../2022-01-06--2--daily_report--APOCAHOUSE3.svg   | 1618 +++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../2022-01-06--3--daily_report--GASCOACH4.svg     | 1589 ++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../2022-01-06--4--daily_report--WAFFELBIT6.svg    | 1704 ++++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../reports/SuperArbys/2022-01-07/daily/index.html |  215 +++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  dstock/reports/SuperArbys/2022-01-07/index.html    |  315 ++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../reports/SuperArbys/2022-01-07/index.html.new   |  315 ++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.email.txt         |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_WAFFELBIT6.log.txt           |  140 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.email.txt          |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_GASCOACH4.log.txt            |  108 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.email.txt       |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_CHIEFMICKEY5.log.txt         |  124 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.email.txt        |   28 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../trader_SuperArbys_APOCAHOUSE3.log.txt          |   92 ++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../dstock_updater_SuperArbys.email.txt            |   13 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../dstock_updater_SuperArbys.log.txt              |  297 ++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../dstock_updater_SuperArbys.email.txt            |   13 +
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../dstock_updater_SuperArbys.log.txt              |  297 ++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  dstock/reports/SuperArbys/index.html               |  835 ++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  dstock/reports/SuperArbys/index.html.new           |  835 ++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../daily/2022-01-06--1--daily_report--SP500.svg   | 1460 +++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../daily/2022-01-06--2--daily_report--VFUNDS.svg  | 1531 ++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../2022-01-06--3--daily_report--TESTFUNDS.svg     | 1542 ++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../daily/2022-01-06--4--daily_report--STONKS.svg  | 1450 +++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../daily/2022-01-06--5--daily_report--SCHMOO.svg  | 1610 ++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../2022-01-06--6--daily_report--UNCORRELATED.svg  | 1550 ++++++++++++++++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  .../reports/SuperBench/2022-01-07/daily/index.html |  289 ++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  dstock/reports/SuperBench/2022-01-07/index.html    |  302 ++++
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  dstock/reports/SuperBench/index.html.new           |   15 +-
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  366 files changed, 45524 insertions(+), 1 deletion(-)
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090333_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090333_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090333_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090333_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090459_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090459_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090643_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-27/post_service/090643_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090027_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090027_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090228_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090228_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090333_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090333_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090733_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-28/post_service/090733_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090035_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090035_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090333_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090333_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090543_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-29/post_service/090543_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090133_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090133_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090233_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090233_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090733_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090733_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090733_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-11-30/post_service/090733_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090132_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090132_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090332_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090332_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090432_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090432_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090633_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-01/post_service/090633_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090240_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090240_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090432_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090432_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090443_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090443_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090732_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-02/post_service/090732_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090310_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090310_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090333_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090333_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090409_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090409_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090409_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-03/post_service/090409_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090532_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090532_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090632_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090632_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090643_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090643_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090832_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-04/post_service/090832_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090434_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090434_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090511_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090511_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090633_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090633_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090741_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-05/post_service/090741_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090033_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090033_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090343_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090343_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090510_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-06/post_service/090510_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090333_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090333_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090601_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090601_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090632_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090632_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090732_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-07/post_service/090732_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090233_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090233_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090412_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090412_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090415_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090415_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090510_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-08/post_service/090510_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090143_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090143_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090332_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090332_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090432_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090432_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090732_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-09/post_service/090732_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090032_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090032_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090143_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090143_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090433_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090433_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090532_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-10/post_service/090532_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090114_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090114_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090434_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090434_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090434_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-11/post_service/090434_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090316_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090316_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090544_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090544_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090733_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090733_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090834_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-12/post_service/090834_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090133_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090133_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090133_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090133_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090344_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090344_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090533_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-13/post_service/090533_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090132_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090132_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090532_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090532_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090641_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090641_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090732_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-14/post_service/090732_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090033_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090033_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090223_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090223_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090317_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090317_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090427_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-15/post_service/090427_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090134_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090134_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090733_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090733_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090733_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090733_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090734_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-16/post_service/090734_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090232_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090232_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090243_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090243_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090244_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090244_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090632_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-17/post_service/090632_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090532_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090532_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090532_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090532_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090632_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090632_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090730_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-18/post_service/090730_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090233_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090233_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090333_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090333_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090428_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090428_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090544_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-19/post_service/090544_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090032_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090032_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090315_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090315_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090333_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090333_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090427_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-20/post_service/090427_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090316_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090316_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090532_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090532_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090732_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090732_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090733_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-21/post_service/090733_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090233_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090233_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090428_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090428_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090546_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090546_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090633_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-22/post_service/090633_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090216_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090216_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090232_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090232_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090733_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090733_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090815_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-23/post_service/090815_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090129_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090129_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090129_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090129_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090629_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090629_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090630_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-24/post_service/090630_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090229_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090229_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090229_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090229_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090316_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090316_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090524_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-25/post_service/090524_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090033_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090315_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090315_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090334_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090334_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090745_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-26/post_service/090745_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090133_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090133_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090433_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090433_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090521_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090521_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090815_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-27/post_service/090815_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090033_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090033_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090233_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090233_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090532_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090532_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090633_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-28/post_service/090633_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090032_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090032_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090428_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090428_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090625_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090625_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090815_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-29/post_service/090815_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090029_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090029_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090127_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090127_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090315_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090315_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090523_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-30/post_service/090523_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090333_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090333_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090634_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090634_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090732_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090732_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090733_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2021-12-31/post_service/090733_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090016_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090016_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090315_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090315_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090643_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090643_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090832_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-01/post_service/090832_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090105_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090105_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090106_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090106_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090734_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090734_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090817_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/090817_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225218_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225218_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225232_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225232_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225246_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225246_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225300_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-02/post_service/225300_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090101_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090101_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090402_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090402_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090402_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090402_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090750_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-03/post_service/090750_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090044_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090044_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090044_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090044_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090447_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090447_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090502_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-04/post_service/090502_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090121_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090121_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090201_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090201_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090626_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090626_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090721_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-05/post_service/090721_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090301_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090301_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090321_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090321_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090501_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090501_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090801_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-06/post_service/090801_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/daily/2022-01-06--1--daily_report--CHIEFMICKEY5.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/daily/2022-01-06--2--daily_report--APOCAHOUSE3.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/daily/2022-01-06--3--daily_report--GASCOACH4.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/daily/2022-01-06--4--daily_report--WAFFELBIT6.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/daily/index.html
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/index.html
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/index.html.new
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090120_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090120_trader_SuperArbys_WAFFELBIT6/trader_SuperArbys_WAFFELBIT6.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090202_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090202_trader_SuperArbys_GASCOACH4/trader_SuperArbys_GASCOACH4.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090530_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090530_trader_SuperArbys_CHIEFMICKEY5/trader_SuperArbys_CHIEFMICKEY5.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090801_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/090801_trader_SuperArbys_APOCAHOUSE3/trader_SuperArbys_APOCAHOUSE3.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/131836_dstock_updater_SuperArbys/dstock_updater_SuperArbys.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/131836_dstock_updater_SuperArbys/dstock_updater_SuperArbys.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/132621_dstock_updater_SuperArbys/dstock_updater_SuperArbys.email.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/2022-01-07/post_service/132621_dstock_updater_SuperArbys/dstock_updater_SuperArbys.log.txt
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/index.html
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperArbys/index.html.new
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/daily/2022-01-06--1--daily_report--SP500.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/daily/2022-01-06--2--daily_report--VFUNDS.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/daily/2022-01-06--3--daily_report--TESTFUNDS.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/daily/2022-01-06--4--daily_report--STONKS.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/daily/2022-01-06--5--daily_report--SCHMOO.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/daily/2022-01-06--6--daily_report--UNCORRELATED.svg
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/daily/index.html
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374658]:  create mode 100644 dstock/reports/SuperBench/2022-01-07/index.html
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]: INFO:root:mkdir -p report_website/dstock/reports/SuperGangsta/2022-01-08/daily && cp -vr runs/daily_report_output_2022-01-07/* report_website/dstock/reports/SuperGangsta/2022-01-08/daily/
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374684]: 'runs/daily_report_output_2022-01-07/2022-01-07--1--daily_report--TESTFUNDS0830.svg' -> 'report_website/dstock/reports/SuperGangsta/2022-01-08/daily/2022-01-07--1--daily_report--TESTFUNDS0830.svg'
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374684]: 'runs/daily_report_output_2022-01-07/2022-01-07--2--daily_report--TESTFUNDS1330.svg' -> 'report_website/dstock/reports/SuperGangsta/2022-01-08/daily/2022-01-07--2--daily_report--TESTFUNDS1330.svg'
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374684]: 'runs/daily_report_output_2022-01-07/2022-01-07--3--daily_report--TESTFUNDS1550.svg' -> 'report_website/dstock/reports/SuperGangsta/2022-01-08/daily/2022-01-07--3--daily_report--TESTFUNDS1550.svg'
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374684]: 'runs/daily_report_output_2022-01-07/index.html' -> 'report_website/dstock/reports/SuperGangsta/2022-01-08/daily/index.html'
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]: INFO:root:Building index for report_website/dstock/reports/SuperGangsta/2022-01-08
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]: INFO:root:./generate_index.py report_website/dstock/reports/SuperGangsta/2022-01-08 --output-file index.html
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]: INFO:root:Building index for report_website/dstock/reports/SuperGangsta
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]: INFO:root:./generate_index.py report_website/dstock/reports/SuperGangsta --output-file index.html
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]: INFO:root:
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]:         cd report_website && \
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]:         git add . && \
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]:         git commit -am "Adding report from runs/daily_report_output_2022-01-07 to dstock/reports/SuperGangsta/2022-01-08/daily" && \
+Jan 08 01:01:36 the-rain-maker dstock_updater_SuperGangsta[1374453]:         git push
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]: [master ce76563b6] Adding report from runs/daily_report_output_2022-01-07 to dstock/reports/SuperGangsta/2022-01-08/daily
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  20 files changed, 6783 insertions(+), 2 deletions(-)
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/010145_dstock_updater_SuperGangsta/dstock_updater_SuperGangsta.email.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/010145_dstock_updater_SuperGangsta/dstock_updater_SuperGangsta.log.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/080305_recommendation_SuperGangsta_TESTFUNDS0830/recommendation_SuperGangsta_TESTFUNDS0830.email.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/080305_recommendation_SuperGangsta_TESTFUNDS0830/recommendation_SuperGangsta_TESTFUNDS0830.log.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/083329_trader_SuperGangsta_TESTFUNDS0830/trader_SuperGangsta_TESTFUNDS0830.email.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/083329_trader_SuperGangsta_TESTFUNDS0830/trader_SuperGangsta_TESTFUNDS0830.log.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/130103_recommendation_SuperGangsta_TESTFUNDS1330/recommendation_SuperGangsta_TESTFUNDS1330.email.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/130103_recommendation_SuperGangsta_TESTFUNDS1330/recommendation_SuperGangsta_TESTFUNDS1330.log.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/133201_trader_SuperGangsta_TESTFUNDS1330/trader_SuperGangsta_TESTFUNDS1330.email.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/133201_trader_SuperGangsta_TESTFUNDS1330/trader_SuperGangsta_TESTFUNDS1330.log.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/150224_recommendation_SuperGangsta_TESTFUNDS1550/recommendation_SuperGangsta_TESTFUNDS1550.email.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/150224_recommendation_SuperGangsta_TESTFUNDS1550/recommendation_SuperGangsta_TESTFUNDS1550.log.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/155257_trader_SuperGangsta_TESTFUNDS1550/trader_SuperGangsta_TESTFUNDS1550.email.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-07/post_service/155257_trader_SuperGangsta_TESTFUNDS1550/trader_SuperGangsta_TESTFUNDS1550.log.txt
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/daily/2022-01-07--1--daily_report--TESTFUNDS0830.svg
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/daily/2022-01-07--2--daily_report--TESTFUNDS1330.svg
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/daily/2022-01-07--3--daily_report--TESTFUNDS1550.svg
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/daily/index.html
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374759]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/index.html
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374785]: To github.com:AlwaysTraining/AlwaysTraining.github.io.git
+Jan 08 01:01:37 the-rain-maker dstock_updater_SuperGangsta[1374785]:    542ef40ac..ce76563b6  master -> master
+Jan 08 01:01:38 the-rain-maker dstock_updater_SuperGangsta[1371485]: + set +x
+Jan 08 01:01:38 the-rain-maker dstock_updater_SuperGangsta[1371485]: Sending email about website dstock/reports/SuperGangsta/2022-01-08/daily ...
+Jan 08 01:01:38 the-rain-maker dstock_updater_SuperGangsta[1374911]: ++ date -I
+Jan 08 01:01:38 the-rain-maker dstock_updater_SuperGangsta[1371485]: + ./send_mail --to derrick.karimi@gmail.com --_from derrick.karimi@gmail.com --subject '[dstock] SuperGangsta Daily Report for 2022-01-08' --text https://alwaystraining.github.io/dstock/reports/SuperGangsta/2022-01-08/daily/ --server smtp.gmail.com --port 587 --server_user dr.randy.myers --server_user_pass dr.randy.myers.password
+Jan 08 01:01:39 the-rain-maker dstock_updater_SuperGangsta[1371485]: + set +x
+Jan 08 01:01:39 the-rain-maker dstock_updater_SuperGangsta[1371224]: + set +x
+Jan 08 01:01:39 the-rain-maker sudo[1371223]: pam_unix(sudo:session): session closed for user dkarimi
+Jan 08 01:01:39 the-rain-maker dstock_updater_SuperGangsta[1371215]: + set +x
+Jan 08 01:01:40 the-rain-maker sudo[1375161]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; ENV=SERVICE_RESULT=success EXIT_CODE=exited EXIT_STATUS=0 ; COMMAND=/home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+Jan 08 01:01:40 the-rain-maker sudo[1375161]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 08 01:01:40 the-rain-maker dstock_updater_SuperGangsta[1375163]: generating post service report for : dstock_updater_SuperGangsta
+Jan 08 01:01:40 the-rain-maker dstock_updater_SuperGangsta[1375163]: Generating email content ...
+Jan 08 01:01:40 the-rain-maker dstock_updater_SuperGangsta[1375163]: Sending email about website dstock/reports/SuperGangsta/2022-01-08/post_service/010140_dstock_updater_SuperGangsta ...
+Jan 08 01:01:41 the-rain-maker sudo[1375161]: pam_unix(sudo:session): session closed for user dkarimi
+Jan 08 01:01:41 the-rain-maker systemd[1]: dstock_updater_SuperGangsta.service: Succeeded.
+Jan 08 01:01:41 the-rain-maker systemd[1]: Finished dstock SuperGangsta updater service.
+Jan 09 01:01:05 the-rain-maker systemd[1]: Starting dstock SuperGangsta updater service...
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786980]: updating application
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786980]: + sudo -u dkarimi ./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 09 01:01:05 the-rain-maker sudo[786986]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; COMMAND=./dstock_updater_helper.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 09 01:01:05 the-rain-maker sudo[786986]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: Clearing Dir: runs
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: Clearing Dir: opentuner.db
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: Clearing Dir: download_cache
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: !!!
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: !!! It is now time to update dstock
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: !!!
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: + git status
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786994]: On branch release
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786994]: Your branch is up to date with 'origin/release'.
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786994]: nothing to commit, working tree clean
+Jan 09 01:01:05 the-rain-maker dstock_updater_SuperGangsta[786987]: + git pull
+Jan 09 01:01:06 the-rain-maker dstock_updater_SuperGangsta[787001]: Already up to date.
+Jan 09 01:01:06 the-rain-maker dstock_updater_SuperGangsta[786987]: + set +x
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pandas in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (1.3.3)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pyyaml in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (5.4.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: prettytable in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (2.2.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: yfinance in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (0.1.63)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: matplotlib in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (3.4.3)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: alpaca-trade-api in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 6)) (1.3.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pandas_datareader in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (0.10.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: gspread in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 8)) (4.0.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: google-api-python-client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 9)) (2.21.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: oauth2client in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 10)) (4.1.3)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: wheel in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 11)) (0.37.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pytz>=2017.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2021.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: python-dateutil>=2.7.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (2.8.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: numpy>=1.17.3 in ./dstock_venv/lib/python3.8/site-packages (from pandas->-r requirements.txt (line 1)) (1.21.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: wcwidth in ./dstock_venv/lib/python3.8/site-packages (from prettytable->-r requirements.txt (line 3)) (0.2.5)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: lxml>=4.5.1 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (4.6.3)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: multitasking>=0.0.7 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (0.0.9)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: requests>=2.20 in ./dstock_venv/lib/python3.8/site-packages (from yfinance->-r requirements.txt (line 4)) (2.26.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pyparsing>=2.2.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (2.4.7)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pillow>=6.2.0 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (8.3.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: kiwisolver>=1.0.1 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (1.3.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: cycler>=0.10 in ./dstock_venv/lib/python3.8/site-packages (from matplotlib->-r requirements.txt (line 5)) (0.10.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: websocket-client<2,>=0.56.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.2.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: urllib3<2,>1.24 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.26.6)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: websockets<10,>=8.0 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (9.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: aiohttp==3.7.4 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (3.7.4)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: msgpack==1.0.2 in ./dstock_venv/lib/python3.8/site-packages (from alpaca-trade-api->-r requirements.txt (line 6)) (1.0.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: google-auth-oauthlib>=0.4.1 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (0.4.6)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: google-auth>=1.12.0 in ./dstock_venv/lib/python3.8/site-packages (from gspread->-r requirements.txt (line 8)) (2.1.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: httplib2<1dev,>=0.15.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.19.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: uritemplate<4dev,>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (3.0.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: google-api-core<3.0.0dev,>=1.21.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (2.0.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: google-auth-httplib2>=0.1.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-python-client->-r requirements.txt (line 9)) (0.1.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: rsa>=3.1.4 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (4.7.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pyasn1>=0.1.7 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.4.8)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: pyasn1-modules>=0.0.5 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (0.2.8)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: six>=1.6.1 in ./dstock_venv/lib/python3.8/site-packages (from oauth2client->-r requirements.txt (line 10)) (1.16.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: idna<4,>=2.5; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (3.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: charset-normalizer~=2.0.0; python_version >= "3" in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2.0.5)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: certifi>=2017.4.17 in ./dstock_venv/lib/python3.8/site-packages (from requests>=2.20->yfinance->-r requirements.txt (line 4)) (2021.5.30)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: yarl<2.0,>=1.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (1.6.3)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: multidict<7.0,>=4.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (5.1.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: attrs>=17.3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (21.2.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: typing-extensions>=3.6.5 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.10.0.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: chardet<4.0,>=2.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.4)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: async-timeout<4.0,>=3.0 in ./dstock_venv/lib/python3.8/site-packages (from aiohttp==3.7.4->alpaca-trade-api->-r requirements.txt (line 6)) (3.0.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: requests-oauthlib>=0.7.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (1.3.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: setuptools>=40.3.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (44.0.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: cachetools<5.0,>=2.0.0 in ./dstock_venv/lib/python3.8/site-packages (from google-auth>=1.12.0->gspread->-r requirements.txt (line 8)) (4.2.2)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: protobuf>=3.12.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (3.18.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: googleapis-common-protos<2.0dev,>=1.6.0 in ./dstock_venv/lib/python3.8/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-api-python-client->-r requirements.txt (line 9)) (1.53.0)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787002]: Requirement already satisfied: oauthlib>=3.0.0 in ./dstock_venv/lib/python3.8/site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib>=0.4.1->gspread->-r requirements.txt (line 8)) (3.1.1)
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[786987]: + ./generate_daily_report.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787017]: generating report:
+Jan 09 01:01:08 the-rain-maker dstock_updater_SuperGangsta[787017]: + ./daily_report --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --start-date 2021-08-23 --end-date 2022-01-08 --output-dir runs/daily_report_output_2022-01-08 --which-source yahoo --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --jitter 100 --num-randos 100 --super-set-name SuperGangsta
+Jan 09 01:01:11 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Fomo is using 100 randos
+Jan 09 01:01:11 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Dowloading History and Prices of TESTFUNDS0830 for 138 days
+Jan 09 01:01:16 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $105765.142350 on 2022-01-08 00:00:00
+Jan 09 01:01:16 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 09 01:01:16 the-rain-maker dstock_updater_SuperGangsta[787033]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 09 01:01:16 the-rain-maker dstock_updater_SuperGangsta[787033]:   fomoframe[line_name] = float('nan')
+Jan 09 01:01:16 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Funding new account: runs/fomo--2022-01-09--010111--2021-08-23--TESTFUNDS0830--trader-0850/account.json
+Jan 09 01:01:21 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Dowloading History and Prices of TESTFUNDS1330 for 138 days
+Jan 09 01:01:26 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $106056.308337 on 2022-01-08 00:00:00
+Jan 09 01:01:26 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 09 01:01:26 the-rain-maker dstock_updater_SuperGangsta[787033]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 09 01:01:26 the-rain-maker dstock_updater_SuperGangsta[787033]:   fomoframe[line_name] = float('nan')
+Jan 09 01:01:26 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Funding new account: runs/fomo--2022-01-09--010111--2021-08-23--TESTFUNDS1330--trader-0850/account.json
+Jan 09 01:01:31 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Dowloading History and Prices of TESTFUNDS1550 for 138 days
+Jan 09 01:01:38 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Asking for time in the past more recent than last history value, taking account's current value $105914.210340 on 2022-01-08 00:00:00
+Jan 09 01:01:38 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Getting initial_investment from Alpaca: $100000.00
+Jan 09 01:01:38 the-rain-maker dstock_updater_SuperGangsta[787033]: /home/dkarimi/work/supersets/SuperGangsta/fomo_graph.py:1022: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+Jan 09 01:01:38 the-rain-maker dstock_updater_SuperGangsta[787033]:   fomoframe[line_name] = float('nan')
+Jan 09 01:01:38 the-rain-maker dstock_updater_SuperGangsta[787033]: INFO:root:Funding new account: runs/fomo--2022-01-09--010111--2021-08-23--TESTFUNDS1550--trader-0850/account.json
+Jan 09 01:01:43 the-rain-maker dstock_updater_SuperGangsta[787033]: Written to runs/daily_report_output_2022-01-08/index.html
+Jan 09 01:01:43 the-rain-maker dstock_updater_SuperGangsta[787017]: + set +x
+Jan 09 01:01:43 the-rain-maker dstock_updater_SuperGangsta[787017]: updating website dstock/reports/SuperGangsta/2022-01-09/daily ...
+Jan 09 01:01:43 the-rain-maker dstock_updater_SuperGangsta[787017]: + ./report_curator --input-report-dir runs/daily_report_output_2022-01-08 --target-report-dir dstock/reports/SuperGangsta/2022-01-09/daily --top-index-dir dstock/reports/SuperGangsta --index-generation isolated
+Jan 09 01:01:45 the-rain-maker dstock_updater_SuperGangsta[787186]: INFO:root:cd report_website && git pull
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787207]: From github.com:AlwaysTraining/AlwaysTraining.github.io
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787207]:    ce76563b6..2427e475c  master     -> origin/master
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]: Updating ce76563b6..2427e475c
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]: Fast-forward
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../2022-01-07--1--daily_report--CHIEFMICKEY5.svg  | 1582 ++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../2022-01-07--2--daily_report--APOCAHOUSE3.svg   | 1625 +++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../2022-01-07--3--daily_report--GASCOACH4.svg     | 1614 +++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../2022-01-07--4--daily_report--WAFFELBIT6.svg    | 1693 ++++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../reports/SuperArbys/2022-01-08/daily/index.html |  215 +++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  dstock/reports/SuperArbys/2022-01-08/index.html    |  302 ++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  dstock/reports/SuperArbys/index.html.new           |   15 +-
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../daily/2022-01-07--1--daily_report--SP500.svg   | 1466 +++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../daily/2022-01-07--2--daily_report--VFUNDS.svg  | 1537 ++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../2022-01-07--3--daily_report--TESTFUNDS.svg     | 1530 ++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../daily/2022-01-07--4--daily_report--STONKS.svg  | 1456 +++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../daily/2022-01-07--5--daily_report--SCHMOO.svg  | 1616 +++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../2022-01-07--6--daily_report--UNCORRELATED.svg  | 1556 ++++++++++++++++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  .../reports/SuperBench/2022-01-08/daily/index.html |  289 ++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  dstock/reports/SuperBench/2022-01-08/index.html    |  302 ++++
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  dstock/reports/SuperBench/index.html.new           |   15 +-
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  16 files changed, 16811 insertions(+), 2 deletions(-)
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperArbys/2022-01-08/daily/2022-01-07--1--daily_report--CHIEFMICKEY5.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperArbys/2022-01-08/daily/2022-01-07--2--daily_report--APOCAHOUSE3.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperArbys/2022-01-08/daily/2022-01-07--3--daily_report--GASCOACH4.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperArbys/2022-01-08/daily/2022-01-07--4--daily_report--WAFFELBIT6.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperArbys/2022-01-08/daily/index.html
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperArbys/2022-01-08/index.html
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/daily/2022-01-07--1--daily_report--SP500.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/daily/2022-01-07--2--daily_report--VFUNDS.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/daily/2022-01-07--3--daily_report--TESTFUNDS.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/daily/2022-01-07--4--daily_report--STONKS.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/daily/2022-01-07--5--daily_report--SCHMOO.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/daily/2022-01-07--6--daily_report--UNCORRELATED.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/daily/index.html
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787213]:  create mode 100644 dstock/reports/SuperBench/2022-01-08/index.html
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]: INFO:root:mkdir -p report_website/dstock/reports/SuperGangsta/2022-01-09/daily && cp -vr runs/daily_report_output_2022-01-08/* report_website/dstock/reports/SuperGangsta/2022-01-09/daily/
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787228]: 'runs/daily_report_output_2022-01-08/2022-01-08--1--daily_report--TESTFUNDS0830.svg' -> 'report_website/dstock/reports/SuperGangsta/2022-01-09/daily/2022-01-08--1--daily_report--TESTFUNDS0830.svg'
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787228]: 'runs/daily_report_output_2022-01-08/2022-01-08--2--daily_report--TESTFUNDS1330.svg' -> 'report_website/dstock/reports/SuperGangsta/2022-01-09/daily/2022-01-08--2--daily_report--TESTFUNDS1330.svg'
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787228]: 'runs/daily_report_output_2022-01-08/2022-01-08--3--daily_report--TESTFUNDS1550.svg' -> 'report_website/dstock/reports/SuperGangsta/2022-01-09/daily/2022-01-08--3--daily_report--TESTFUNDS1550.svg'
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787228]: 'runs/daily_report_output_2022-01-08/index.html' -> 'report_website/dstock/reports/SuperGangsta/2022-01-09/daily/index.html'
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]: INFO:root:Building index for report_website/dstock/reports/SuperGangsta/2022-01-09
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]: INFO:root:./generate_index.py report_website/dstock/reports/SuperGangsta/2022-01-09 --output-file index.html
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]: INFO:root:Building index for report_website/dstock/reports/SuperGangsta
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]: INFO:root:./generate_index.py report_website/dstock/reports/SuperGangsta --output-file index.html
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]: INFO:root:
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]:         cd report_website && \
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]:         git add . && \
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]:         git commit -am "Adding report from runs/daily_report_output_2022-01-08 to dstock/reports/SuperGangsta/2022-01-09/daily" && \
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787186]:         git push
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]: [master c0ab4a1ba] Adding report from runs/daily_report_output_2022-01-08 to dstock/reports/SuperGangsta/2022-01-09/daily
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  20 files changed, 7505 insertions(+), 2 deletions(-)
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/010140_dstock_updater_SuperGangsta/dstock_updater_SuperGangsta.email.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/010140_dstock_updater_SuperGangsta/dstock_updater_SuperGangsta.log.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/080205_recommendation_SuperGangsta_TESTFUNDS0830/recommendation_SuperGangsta_TESTFUNDS0830.email.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/080205_recommendation_SuperGangsta_TESTFUNDS0830/recommendation_SuperGangsta_TESTFUNDS0830.log.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/083602_trader_SuperGangsta_TESTFUNDS0830/trader_SuperGangsta_TESTFUNDS0830.email.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/083602_trader_SuperGangsta_TESTFUNDS0830/trader_SuperGangsta_TESTFUNDS0830.log.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/130304_recommendation_SuperGangsta_TESTFUNDS1330/recommendation_SuperGangsta_TESTFUNDS1330.email.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/130304_recommendation_SuperGangsta_TESTFUNDS1330/recommendation_SuperGangsta_TESTFUNDS1330.log.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/133251_trader_SuperGangsta_TESTFUNDS1330/trader_SuperGangsta_TESTFUNDS1330.email.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/133251_trader_SuperGangsta_TESTFUNDS1330/trader_SuperGangsta_TESTFUNDS1330.log.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/150204_recommendation_SuperGangsta_TESTFUNDS1550/recommendation_SuperGangsta_TESTFUNDS1550.email.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/150204_recommendation_SuperGangsta_TESTFUNDS1550/recommendation_SuperGangsta_TESTFUNDS1550.log.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/155822_trader_SuperGangsta_TESTFUNDS1550/trader_SuperGangsta_TESTFUNDS1550.email.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-08/post_service/155822_trader_SuperGangsta_TESTFUNDS1550/trader_SuperGangsta_TESTFUNDS1550.log.txt
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-09/daily/2022-01-08--1--daily_report--TESTFUNDS0830.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-09/daily/2022-01-08--2--daily_report--TESTFUNDS1330.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-09/daily/2022-01-08--3--daily_report--TESTFUNDS1550.svg
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-09/daily/index.html
+Jan 09 01:01:46 the-rain-maker dstock_updater_SuperGangsta[787247]:  create mode 100644 dstock/reports/SuperGangsta/2022-01-09/index.html
+Jan 09 01:01:47 the-rain-maker dstock_updater_SuperGangsta[787273]: To github.com:AlwaysTraining/AlwaysTraining.github.io.git
+Jan 09 01:01:47 the-rain-maker dstock_updater_SuperGangsta[787273]:    2427e475c..c0ab4a1ba  master -> master
+Jan 09 01:01:47 the-rain-maker dstock_updater_SuperGangsta[787017]: + set +x
+Jan 09 01:01:47 the-rain-maker dstock_updater_SuperGangsta[787017]: Sending email about website dstock/reports/SuperGangsta/2022-01-09/daily ...
+Jan 09 01:01:47 the-rain-maker dstock_updater_SuperGangsta[787278]: ++ date -I
+Jan 09 01:01:47 the-rain-maker dstock_updater_SuperGangsta[787017]: + ./send_mail --to derrick.karimi@gmail.com --_from derrick.karimi@gmail.com --subject '[dstock] SuperGangsta Daily Report for 2022-01-09' --text https://alwaystraining.github.io/dstock/reports/SuperGangsta/2022-01-09/daily/ --server smtp.gmail.com --port 587 --server_user dr.randy.myers --server_user_pass dr.randy.myers.password
+Jan 09 01:01:49 the-rain-maker dstock_updater_SuperGangsta[787017]: + set +x
+Jan 09 01:01:49 the-rain-maker dstock_updater_SuperGangsta[786987]: + set +x
+Jan 09 01:01:49 the-rain-maker sudo[786986]: pam_unix(sudo:session): session closed for user dkarimi
+Jan 09 01:01:49 the-rain-maker dstock_updater_SuperGangsta[786980]: + set +x
+Jan 09 01:01:49 the-rain-maker sudo[787305]:     root : TTY=unknown ; PWD=/home/dkarimi/work/supersets/SuperGangsta ; USER=dkarimi ; ENV=SERVICE_RESULT=success EXIT_CODE=exited EXIT_STATUS=0 ; COMMAND=/home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+Jan 09 01:01:49 the-rain-maker sudo[787305]: pam_unix(sudo:session): session opened for user dkarimi by (uid=0)
+Jan 09 01:01:49 the-rain-maker dstock_updater_SuperGangsta[787307]: generating post service report for : dstock_updater_SuperGangsta
+Jan 09 01:01:49 the-rain-maker dstock_updater_SuperGangsta[787307]: Generating email content ...
