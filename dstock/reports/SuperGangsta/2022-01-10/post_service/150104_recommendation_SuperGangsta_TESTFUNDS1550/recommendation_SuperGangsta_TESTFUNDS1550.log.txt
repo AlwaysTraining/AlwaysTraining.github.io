@@ -1,0 +1,104 @@
+-- Logs begin at Sun 2022-01-02 20:30:53 EST, end at Mon 2022-01-10 15:01:04 EST. --
+Jan 09 15:01:19 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc recommendation service...
+Jan 09 15:01:19 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967983]: + timeout -s 3 -k 5s 1000s ./dstock.py palloc --start-after-last-recommendation --results-file runs/TESTFUNDS1550_recommendation_results.yaml --diagnostic-mode --auto-config --start-date 2022-01-07 --end-date 2022-01-07 --record-portfolio --fund-set TESTFUNDS1550 --results-file /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS1550_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --set-auto-config 0 --cfg-file dstock_cfg.palloc.yaml
+Jan 09 15:01:20 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None, 'no_random_time_lane': False})
+Jan 09 15:01:20 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:Looking up start allocation for 2022-01-09 00:00:00
+Jan 09 15:01:20 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+Jan 09 15:01:20 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fTESTFUNDS1550.yaml
+Jan 09 15:01:20 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:Utilizing last recommendation detrmined new start: 2022-01-07
+Jan 09 15:01:20 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:dstock_cfg loaded from file (cfg_file = dstock_cfg.palloc.yaml)
+Jan 09 15:01:20 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:Starting allocations from 2022-01-07: [AAPL 13.0%, AIG 13.3%, FB 20.6%, GOOG 27.8%, IBM 3.4%, BAC 2.4%, WM 19.6%]
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: /home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/pandas_datareader/tiingo.py:234: FutureWarning: In a future version of pandas all arguments of concat except for the argument 'objs' will be keyword-only
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:   return pd.concat(dfs, self._concat_axis)
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:computing palloc strategy iteration 1 of 1 starting 2022-01-07 00:00:00 over 24 hours
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:palloc begin:
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             initial_investment=1000.0
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             start_date=2022-01-07 00:00:00
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             end_date=2022-01-07 00:00:00
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             start_fund_weights={'AAPL': 0.1298627071957738, 'AIG': 0.13286526505132595, 'FB': 0.2057032529264402, 'GOOG': 0.2776394016468574, 'IBM': 0.03401411735447418, 'BAC': 0.024357168611181552, 'WM': 0.195558087213947}
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             record_portfolio=True
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             generation_time=None
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             diagnostic_mode=True
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:             
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:palloc end:
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: {'account_value': 1000.0,
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'benchmark_rebal_cnt': 1,
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'benchmk_value': 1000.0,
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'first_index': Timestamp('2022-01-07 00:00:00'),
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'last_index': Timestamp('2022-01-07 00:00:00'),
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'rebal_cnt': 1}
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:Collected 0.000000 year result 1 used 1 rebalances for anualized alpha: 0.000000 %
+Jan 09 15:01:22 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:Recording at recommendation id 411
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: INFO:root:Recorded recommendation 411 in 7 rows
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: alpha: 0.0 %
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: {'account_value_series': {'2022-01-07': 1000.0},
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'baseline_value_series': {'2022-01-07': 1000.0},
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'end_date': '2022-01-07',
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'fund_weights_series': {'2022-01-07': {'AAPL': 0.13012955301629225,
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:                                         'AIG': 0.1294571926319292,
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:                                         'BAC': 0.021420697044660666,
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:                                         'FB': 0.2004022333410008,
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:                                         'GOOG': 0.2689202083238705,
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:                                         'IBM': 0.05106858818139009,
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:                                         'WM': 0.19860152746085652}},
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'iterations': [0.0],
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'start_date': '2021-01-01',
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]:  'statistics': {}}
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967993]: Done True /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS1550_recommendation_results.yaml
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967983]: + ec=0
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[967983]: + set +x
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[968012]: generating post service report for : recommendation_SuperGangsta_TESTFUNDS1550
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[968012]: Generating email content ...
+Jan 09 15:01:23 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[968012]: Sending email about website dstock/reports/SuperGangsta/2022-01-09/post_service/150123_recommendation_SuperGangsta_TESTFUNDS1550 ...
+Jan 09 15:01:24 the-rain-maker systemd[1]: recommendation_SuperGangsta_TESTFUNDS1550.service: Succeeded.
+Jan 09 15:01:24 the-rain-maker systemd[1]: Finished dstock SuperGangsta palloc recommendation service.
+Jan 10 15:01:00 the-rain-maker systemd[1]: Starting dstock SuperGangsta palloc recommendation service...
+Jan 10 15:01:00 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681857]: + timeout -s 3 -k 5s 1000s ./dstock.py palloc --start-after-last-recommendation --results-file runs/TESTFUNDS1550_recommendation_results.yaml --diagnostic-mode --auto-config --start-date 2022-01-07 --end-date 2022-01-07 --record-portfolio --fund-set TESTFUNDS1550 --results-file /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS1550_recommendation_results.yaml --diagnostic-mode --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --set-auto-config 0 --cfg-file dstock_cfg.palloc.yaml
+Jan 10 15:01:01 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:palloc_main({'dry_run': False, 'log_level': 'INFO', 'subcmd': 'palloc', 'self_seeded_file': None, 'opentuner_db_name': None, 'dstock_max_tuner_iterations': None, 'tune_time_span_days': None, 'no_random_time_lane': False})
+Jan 10 15:01:01 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:Looking up start allocation for 2022-01-10 00:00:00
+Jan 10 15:01:01 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:Loaded file: dstock_cfg.palloc.yaml
+Jan 10 15:01:01 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: WARNING:root:Skipping missing file: dstock_cfg.palloc.fTESTFUNDS1550.yaml
+Jan 10 15:01:01 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:Utilizing last recommendation detrmined new start: 2022-01-07
+Jan 10 15:01:01 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:dstock_cfg loaded from file (cfg_file = dstock_cfg.palloc.yaml)
+Jan 10 15:01:01 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:Starting allocations from 2022-01-07: [AAPL 13.0%, AIG 12.9%, FB 20.0%, GOOG 26.9%, IBM 5.1%, BAC 2.1%, WM 19.9%]
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: /home/dkarimi/work/supersets/SuperGangsta/dstock_venv/lib/python3.8/site-packages/pandas_datareader/tiingo.py:234: FutureWarning: In a future version of pandas all arguments of concat except for the argument 'objs' will be keyword-only
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:   return pd.concat(dfs, self._concat_axis)
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:computing palloc strategy iteration 1 of 1 starting 2022-01-07 00:00:00 over 24 hours
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:palloc begin:
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             initial_investment=1000.0
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             start_date=2022-01-07 00:00:00
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             end_date=2022-01-07 00:00:00
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             start_fund_weights={'AAPL': 0.13012955301629225, 'AIG': 0.1294571926319292, 'FB': 0.2004022333410008, 'GOOG': 0.2689202083238705, 'IBM': 0.05106858818139009, 'BAC': 0.021420697044660666, 'WM': 0.19860152746085652}
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             record_portfolio=True
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             generation_time=None
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             diagnostic_mode=True
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:             
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:palloc end:
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: {'account_value': 1000.0000000000001,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'benchmark_rebal_cnt': 1,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'benchmk_value': 1000.0,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'first_index': Timestamp('2022-01-07 00:00:00'),
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'last_index': Timestamp('2022-01-07 00:00:00'),
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'rebal_cnt': 1}
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:Collected 0.000000 year result 1 used 1 rebalances for anualized alpha: 0.000000 %
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:Recording at recommendation id 414
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: INFO:root:Recorded recommendation 414 in 7 rows
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: alpha: 0.0 %
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: {'account_value_series': {'2022-01-07': 1000.0000000000001},
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'baseline_value_series': {'2022-01-07': 1000.0},
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'end_date': '2022-01-07',
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'fund_weights_series': {'2022-01-07': {'AAPL': 0.1303539785698091,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:                                         'AIG': 0.12812684451758805,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:                                         'BAC': 0.021233709232327345,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:                                         'FB': 0.19764869848567157,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:                                         'GOOG': 0.26411694897552207,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:                                         'IBM': 0.05911243202587245,
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:                                         'WM': 0.1994073881932094}},
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'iterations': [4.152411747782026e-14],
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'start_date': '2021-01-01',
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]:  'statistics': {}}
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681867]: Done True /home/dkarimi/work/supersets/SuperGangsta/runs/TESTFUNDS1550_recommendation_results.yaml
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681857]: + ec=0
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681857]: + set +x
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681916]: generating post service report for : recommendation_SuperGangsta_TESTFUNDS1550
+Jan 10 15:01:04 the-rain-maker recommendation_SuperGangsta_TESTFUNDS1550[1681916]: Generating email content ...
