@@ -1,0 +1,29 @@
+https://alwaystraining.github.io/dstock/reports/SuperGangsta/2022-01-26/post_service/010219_dstock_updater_SuperGangsta/
+SERVICE_NAME    = dstock_updater_SuperGangsta
+SERVICE_RESULT  = success
+EXIT_CODE       = exited
+EXIT_STATUS     = 0
+UPTIME          =  01:02:19 up 23 days,  4:24, 10 users,  load average: 11.21, 9.30, 7.84
+● dstock_updater_SuperGangsta.service - dstock SuperGangsta updater service
+     Loaded: loaded (/etc/systemd/system/dstock_updater_SuperGangsta.service; enabled; vendor preset: enabled)
+     Active: deactivating (stop-post)
+TriggeredBy: ● dstock_updater_SuperGangsta.timer
+    Process: 1655635 ExecStart=/home/dkarimi/work/supersets/SuperGangsta/dstock_updater.sh --user dkarimi --clean --alpaca-vars-file /home/dkarimi/work/vault/varfiles/SuperGangsta --which-api-source tiingo --super-set-name SuperGangsta --sqlite-file /home/dkarimi/work/supersets/SuperGangsta/palloc.sqlite --service-name dstock_updater_SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 (code=exited, status=0/SUCCESS)
+   Main PID: 1655635 (code=exited, status=0/SUCCESS); Control PID: 1657814 (sudo)
+      Tasks: 3 (limit: 9001)
+     Memory: 21.6M
+     CGroup: /system.slice/dstock_updater_SuperGangsta.service
+             ├─1657814 /usr/bin/sudo --preserve-env=SERVICE_RESULT --preserve-env=EXIT_CODE --preserve-env=EXIT_STATUS -u dkarimi /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             ├─1657816 /bin/bash /home/dkarimi/work/supersets/SuperGangsta/generate_post_service_report.sh --super-set-name SuperGangsta --portfolio TESTFUNDS0830,TESTFUNDS1330,TESTFUNDS1550 --service-name dstock_updater_SuperGangsta --send-success-emails
+             └─1657838 systemctl status dstock_updater_SuperGangsta -n 0
+-- Logs begin at Sun 2022-01-02 20:30:53 EST, end at Wed 2022-01-26 01:02:19 EST. --
+Jan 26 01:01:19 the-rain-maker dstock_updater_SuperGangsta[1655676]: Already up to date.
+Jan 26 01:01:19 the-rain-maker dstock_updater_SuperGangsta[1655643]: + set +x
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: pandas in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (1.3.3)
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: pyyaml in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (5.4.1)
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: prettytable in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (2.2.0)
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: yfinance in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (0.1.63)
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: matplotlib in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (3.4.3)
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: alpaca-trade-api in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 6)) (1.3.0)
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: pandas_datareader in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (0.10.0)
+Jan 26 01:01:21 the-rain-maker dstock_updater_SuperGangsta[1655677]: Requirement already satisfied: gspread in ./dstock_venv/lib/python3.8/site-packages (from -r requirements.txt (line 8)) (4.0.1)
